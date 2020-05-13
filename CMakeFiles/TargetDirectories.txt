@@ -1,0 +1,5 @@
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/rebuild_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/edit_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine-test.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/test.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine.dir
