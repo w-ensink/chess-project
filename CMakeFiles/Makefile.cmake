@@ -54,4 +54,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/chess-engine-test.dir/DependInfo.cmake"
   "CMakeFiles/chess-engine.dir/DependInfo.cmake"
+  "CMakeFiles/tiny-osc-test.dir/DependInfo.cmake"
+  "CMakeFiles/tiny_osc.dir/DependInfo.cmake"
   )

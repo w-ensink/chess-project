@@ -304,18 +304,18 @@ CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.s"
 	/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/zkey.cc -o CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.s
 
-CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o: CMakeFiles/chess-engine-test.dir/flags.make
-CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o: src/tests/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o"
-	/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o -c /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/test.cpp
+CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o: CMakeFiles/chess-engine-test.dir/flags.make
+CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o: src/tests/chess_engine_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o"
+	/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o -c /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/chess_engine_tests.cpp
 
-CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.i"
-	/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/test.cpp > CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.i
+CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.i"
+	/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/chess_engine_tests.cpp > CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.i
 
-CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.s"
-	/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/test.cpp -o CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.s
+CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.s"
+	/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/chess_engine_tests.cpp -o CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.s
 
 # Object files for target chess-engine-test
 chess__engine__test_OBJECTS = \
@@ -338,10 +338,11 @@ chess__engine__test_OBJECTS = \
 "CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/transptable.cc.o" \
 "CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/uci.cc.o" \
 "CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.o" \
-"CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o"
+"CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o"
 
 # External object files for target chess-engine-test
-chess__engine__test_EXTERNAL_OBJECTS =
+chess__engine__test_EXTERNAL_OBJECTS = \
+"/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.o"
 
 chess-engine-test: CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/attacks.cc.o
 chess-engine-test: CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/board.cc.o
@@ -362,7 +363,8 @@ chess-engine-test: CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/se
 chess-engine-test: CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/transptable.cc.o
 chess-engine-test: CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/uci.cc.o
 chess-engine-test: CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.o
-chess-engine-test: CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o
+chess-engine-test: CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o
+chess-engine-test: CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.o
 chess-engine-test: CMakeFiles/chess-engine-test.dir/build.make
 chess-engine-test: CMakeFiles/chess-engine-test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable chess-engine-test"

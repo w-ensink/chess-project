@@ -147,6 +147,32 @@ chess-engine/fast:
 	$(MAKE) -f CMakeFiles/chess-engine.dir/build.make CMakeFiles/chess-engine.dir/build
 .PHONY : chess-engine/fast
 
+#=============================================================================
+# Target rules for targets named tiny-osc-test
+
+# Build rule for target.
+tiny-osc-test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tiny-osc-test
+.PHONY : tiny-osc-test
+
+# fast build rule for target.
+tiny-osc-test/fast:
+	$(MAKE) -f CMakeFiles/tiny-osc-test.dir/build.make CMakeFiles/tiny-osc-test.dir/build
+.PHONY : tiny-osc-test/fast
+
+#=============================================================================
+# Target rules for targets named tiny_osc
+
+# Build rule for target.
+tiny_osc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tiny_osc
+.PHONY : tiny_osc
+
+# fast build rule for target.
+tiny_osc/fast:
+	$(MAKE) -f CMakeFiles/tiny_osc.dir/build.make CMakeFiles/tiny_osc.dir/build
+.PHONY : tiny_osc/fast
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -744,32 +770,86 @@ src/shallow-blue-fork/src/zkey.cc.s:
 	$(MAKE) -f CMakeFiles/chess-engine.dir/build.make CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/zkey.cc.s
 .PHONY : src/shallow-blue-fork/src/zkey.cc.s
 
-src/tests/test.o: src/tests/test.cpp.o
+src/tests/chess_engine_tests.o: src/tests/chess_engine_tests.cpp.o
 
-.PHONY : src/tests/test.o
+.PHONY : src/tests/chess_engine_tests.o
 
 # target to build an object file
-src/tests/test.cpp.o:
-	$(MAKE) -f CMakeFiles/chess-engine-test.dir/build.make CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o
-.PHONY : src/tests/test.cpp.o
+src/tests/chess_engine_tests.cpp.o:
+	$(MAKE) -f CMakeFiles/chess-engine-test.dir/build.make CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o
+.PHONY : src/tests/chess_engine_tests.cpp.o
 
-src/tests/test.i: src/tests/test.cpp.i
+src/tests/chess_engine_tests.i: src/tests/chess_engine_tests.cpp.i
 
-.PHONY : src/tests/test.i
+.PHONY : src/tests/chess_engine_tests.i
 
 # target to preprocess a source file
-src/tests/test.cpp.i:
-	$(MAKE) -f CMakeFiles/chess-engine-test.dir/build.make CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.i
-.PHONY : src/tests/test.cpp.i
+src/tests/chess_engine_tests.cpp.i:
+	$(MAKE) -f CMakeFiles/chess-engine-test.dir/build.make CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.i
+.PHONY : src/tests/chess_engine_tests.cpp.i
 
-src/tests/test.s: src/tests/test.cpp.s
+src/tests/chess_engine_tests.s: src/tests/chess_engine_tests.cpp.s
 
-.PHONY : src/tests/test.s
+.PHONY : src/tests/chess_engine_tests.s
 
 # target to generate assembly for a file
-src/tests/test.cpp.s:
-	$(MAKE) -f CMakeFiles/chess-engine-test.dir/build.make CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.s
-.PHONY : src/tests/test.cpp.s
+src/tests/chess_engine_tests.cpp.s:
+	$(MAKE) -f CMakeFiles/chess-engine-test.dir/build.make CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.s
+.PHONY : src/tests/chess_engine_tests.cpp.s
+
+src/tests/tiny_osc_tests.o: src/tests/tiny_osc_tests.cpp.o
+
+.PHONY : src/tests/tiny_osc_tests.o
+
+# target to build an object file
+src/tests/tiny_osc_tests.cpp.o:
+	$(MAKE) -f CMakeFiles/tiny-osc-test.dir/build.make CMakeFiles/tiny-osc-test.dir/src/tests/tiny_osc_tests.cpp.o
+.PHONY : src/tests/tiny_osc_tests.cpp.o
+
+src/tests/tiny_osc_tests.i: src/tests/tiny_osc_tests.cpp.i
+
+.PHONY : src/tests/tiny_osc_tests.i
+
+# target to preprocess a source file
+src/tests/tiny_osc_tests.cpp.i:
+	$(MAKE) -f CMakeFiles/tiny-osc-test.dir/build.make CMakeFiles/tiny-osc-test.dir/src/tests/tiny_osc_tests.cpp.i
+.PHONY : src/tests/tiny_osc_tests.cpp.i
+
+src/tests/tiny_osc_tests.s: src/tests/tiny_osc_tests.cpp.s
+
+.PHONY : src/tests/tiny_osc_tests.s
+
+# target to generate assembly for a file
+src/tests/tiny_osc_tests.cpp.s:
+	$(MAKE) -f CMakeFiles/tiny-osc-test.dir/build.make CMakeFiles/tiny-osc-test.dir/src/tests/tiny_osc_tests.cpp.s
+.PHONY : src/tests/tiny_osc_tests.cpp.s
+
+src/tinyosc/tinyosc.o: src/tinyosc/tinyosc.c.o
+
+.PHONY : src/tinyosc/tinyosc.o
+
+# target to build an object file
+src/tinyosc/tinyosc.c.o:
+	$(MAKE) -f CMakeFiles/tiny_osc.dir/build.make CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.o
+.PHONY : src/tinyosc/tinyosc.c.o
+
+src/tinyosc/tinyosc.i: src/tinyosc/tinyosc.c.i
+
+.PHONY : src/tinyosc/tinyosc.i
+
+# target to preprocess a source file
+src/tinyosc/tinyosc.c.i:
+	$(MAKE) -f CMakeFiles/tiny_osc.dir/build.make CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.i
+.PHONY : src/tinyosc/tinyosc.c.i
+
+src/tinyosc/tinyosc.s: src/tinyosc/tinyosc.c.s
+
+.PHONY : src/tinyosc/tinyosc.s
+
+# target to generate assembly for a file
+src/tinyosc/tinyosc.c.s:
+	$(MAKE) -f CMakeFiles/tiny_osc.dir/build.make CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.s
+.PHONY : src/tinyosc/tinyosc.c.s
 
 # Help Target
 help:
@@ -782,6 +862,8 @@ help:
 	@echo "... chess-engine-test"
 	@echo "... test"
 	@echo "... chess-engine"
+	@echo "... tiny-osc-test"
+	@echo "... tiny_osc"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -842,9 +924,15 @@ help:
 	@echo "... src/shallow-blue-fork/src/zkey.o"
 	@echo "... src/shallow-blue-fork/src/zkey.i"
 	@echo "... src/shallow-blue-fork/src/zkey.s"
-	@echo "... src/tests/test.o"
-	@echo "... src/tests/test.i"
-	@echo "... src/tests/test.s"
+	@echo "... src/tests/chess_engine_tests.o"
+	@echo "... src/tests/chess_engine_tests.i"
+	@echo "... src/tests/chess_engine_tests.s"
+	@echo "... src/tests/tiny_osc_tests.o"
+	@echo "... src/tests/tiny_osc_tests.i"
+	@echo "... src/tests/tiny_osc_tests.s"
+	@echo "... src/tinyosc/tinyosc.o"
+	@echo "... src/tinyosc/tinyosc.i"
+	@echo "... src/tinyosc/tinyosc.s"
 .PHONY : help
 
 

@@ -23,7 +23,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/transptable.cc" "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/transptable.cc.o"
   "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/uci.cc" "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/uci.cc.o"
   "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/zkey.cc" "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.o"
-  "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/test.cpp" "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o"
+  "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/chess_engine_tests.cpp" "/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

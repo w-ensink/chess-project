@@ -341,7 +341,8 @@ chess__engine_OBJECTS = \
 "CMakeFiles/chess-engine.dir/src/main.cpp.o"
 
 # External object files for target chess-engine
-chess__engine_EXTERNAL_OBJECTS =
+chess__engine_EXTERNAL_OBJECTS = \
+"/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.o"
 
 chess-engine: CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/attacks.cc.o
 chess-engine: CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/board.cc.o
@@ -363,6 +364,7 @@ chess-engine: CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/transptable.
 chess-engine: CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/uci.cc.o
 chess-engine: CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/zkey.cc.o
 chess-engine: CMakeFiles/chess-engine.dir/src/main.cpp.o
+chess-engine: CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.o
 chess-engine: CMakeFiles/chess-engine.dir/build.make
 chess-engine: CMakeFiles/chess-engine.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable chess-engine"

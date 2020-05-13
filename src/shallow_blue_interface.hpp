@@ -55,8 +55,11 @@ namespace eon
     void initWithFEN (const std::string& fen)
     {
         Uci::uciNewGame();
-        std::istringstream ss {fen};
-        Uci::setPosition (ss);
+        Uci::board.setToFen (fen);
+    }
+
+    void printBoard() {
+        std::cout << Uci::board.getStringRep() << '\n';
     }
 
 } // namespace eon

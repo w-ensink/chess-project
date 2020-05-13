@@ -18,12 +18,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/transptable.cc.o"
   "CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/uci.cc.o"
   "CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.o"
-  "CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o"
+  "CMakeFiles/chess-engine-test.dir/src/tests/chess_engine_tests.cpp.o"
   "chess-engine-test"
   "chess-engine-test.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/chess-engine-test.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()
