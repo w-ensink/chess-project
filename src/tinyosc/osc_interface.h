@@ -60,7 +60,7 @@ public:
 private:
 
     unsigned int portNumber;
-    char messageBuffer[1024];
+    char messageBuffer [1024];
     int serverFileDescriptor;
     struct sockaddr_in serverAddress;
 };
@@ -98,9 +98,9 @@ struct OSC_Message
     {
         switch (types[index])
         {
-            case 'i': return std::to_string (getTypeAtIndex<long>(index));
+            case 'i':
             case 'h': return std::to_string (getTypeAtIndex<long>(index));
-            case 'f': return std::to_string (getTypeAtIndex<double>(index));
+            case 'f':
             case 'd': return std::to_string (getTypeAtIndex<double>(index));
             case 's': return getTypeAtIndex<std::string> (index);
             default: return "[impossible]";

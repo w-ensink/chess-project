@@ -1,0 +1,6 @@
+
+**/makefile
+*.ds_store
+**/CMakeCache.txt
+**/CMakeFiles
+**/cmake_install.cmake
