@@ -1,1 +1,0 @@
-/usr/local/Cellar/gcc/9.3.0_1/bin/g++-9   -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/chess-engine.dir/main.cpp.o  -o ../build/chess-engine shallow-blue-fork/libshallow-blue.a tinyosc/libtiny-osc.a 

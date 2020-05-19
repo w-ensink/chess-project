@@ -1,4 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -G "CodeBlocks - Unix Makefiles" /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine
