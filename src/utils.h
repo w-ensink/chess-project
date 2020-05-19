@@ -11,10 +11,7 @@
 template <typename... T>
 auto print (T&&... args)
 {
-    auto helper = [] (auto&& arg)
-    {
-        std::cout << arg << " ";
-    };
+    auto helper = [] (auto&& arg) { std::cout << arg << " "; };
     (helper (args), ...);
     std::cout << '\n';
 }

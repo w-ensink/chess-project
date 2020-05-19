@@ -70,6 +70,7 @@ void pickBestMove() {
     if (optionsMap["OwnBook"].getValue() == "true" && book.inBook(board)) {
         std::cout << "bestmove " << book.getMove(board).getNotation() << std::endl;
     } else {
+        std::cout << "iter deep\n";
         search->iterDeep();
     }
 }

@@ -3,9 +3,8 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="chess-engine" targetName="chess-engine" />
-      <config projectName="chess-engine" targetName="chess-engine-test" />
-      <config projectName="chess-engine" targetName="tiny-osc-test" />
-      <config projectName="chess-engine" targetName="tiny_osc" />
+      <config projectName="chess-engine" targetName="tiny-osc" />
+      <config projectName="chess-engine" targetName="shallow-blue" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,31 +14,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="869b53e6-7838-4491-b508-e176e70ed0f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tests/chess_engine_tests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tinyosc/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tinyosc/osc_interface.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chess-engine-test" beforeDir="false" afterPath="$PROJECT_DIR$/chess-engine-test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chess-engine.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/chess-engine.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shallow_blue_interface.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/shallow_blue_interface.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/test.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/3.15.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/attacks.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/board.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/book.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/eval.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/generalmovepicker.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/main.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/move.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/movegen.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/movepicker.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/option.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/orderinginfo.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/pawnstructuretable.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/psquaretable.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/qsearchmovepicker.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/rays.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/search.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/transptable.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/uci.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/shallow-blue-fork/src/zkey.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine-test.dir/src/tests/test.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/attacks.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/board.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/book.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/eval.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/generalmovepicker.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/main.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/move.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/movegen.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/movepicker.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/option.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/orderinginfo.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/pawnstructuretable.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/psquaretable.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/qsearchmovepicker.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/rays.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/search.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/transptable.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/uci.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/chess-engine.dir/src/shallow-blue-fork/src/zkey.cc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny-osc-test.dir/src/tests/tiny_osc_tests.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/tiny_osc.dir/tiny_osc.objlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTestTestfile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-engine" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-engine-test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess-engine.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shallow_blue_interface.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/chess_engine_tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/chess_engine_tests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/tiny_osc_tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/tiny_osc_tests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tinyosc/tinyosc.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/tinyosc/tinyosc.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiny-osc-test" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,18 +142,39 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Default" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bqqPmw9pd5CRFyUZ2Uho2wJ6yW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/tinyosc" />
+      <recent name="$PROJECT_DIR$/src/shallow-blue-fork" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -72,44 +186,26 @@
       <command value="git status" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="CMake Application.tiny-osc-test">
-    <configuration name="chess-engine-test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess-engine" TARGET_NAME="chess-engine-test" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="chess-engine" RUN_TARGET_NAME="chess-engine-test">
+  <component name="RunManager" selected="CMake Application.chess-engine">
+    <configuration name="chess-engine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess-engine" TARGET_NAME="chess-engine" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="chess-engine" RUN_TARGET_NAME="chess-engine">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="chess-engine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess-engine" TARGET_NAME="chess-engine" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="chess-engine" RUN_TARGET_NAME="chess-engine">
+    <configuration name="shallow-blue" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess-engine" TARGET_NAME="shallow-blue" CONFIG_NAME="Default">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tiny-osc-test" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess-engine" TARGET_NAME="tiny-osc-test" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="chess-engine" RUN_TARGET_NAME="tiny-osc-test">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="tiny_osc" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess-engine" TARGET_NAME="tiny_osc" CONFIG_NAME="Default">
+    <configuration name="tiny-osc" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="chess-engine" TARGET_NAME="tiny-osc" CONFIG_NAME="Default">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="CMake Application.chess-engine" />
-      <item itemvalue="CMake Application.chess-engine-test" />
-      <item itemvalue="CMake Application.tiny-osc-test" />
-      <item itemvalue="CMake Application.tiny_osc" />
+      <item itemvalue="CMake Application.shallow-blue" />
+      <item itemvalue="CMake Application.tiny-osc" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -127,24 +223,59 @@
       <workItem from="1589370251174" duration="458000" />
       <workItem from="1589370911786" duration="1147000" />
       <workItem from="1589372346336" duration="259000" />
-      <workItem from="1589372615612" duration="14080000" />
+      <workItem from="1589372615612" duration="57859000" />
+      <workItem from="1589796542630" duration="3285000" />
+      <workItem from="1589900875220" duration="5120000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1120" y="576" key="#Notifications" timestamp="1589900891179">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1120" y="576" key="#Notifications/0.23.2560.1417@0.23.2560.1417" timestamp="1589900891179" />
+    <state x="740" y="386" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589905167885">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="740" y="386" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1589905167885" />
+    <state x="1014" y="374" width="900" height="715" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1589903916249">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1014" y="374" width="900" height="715" key="#com.intellij.ide.macro.MacrosDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1589903916249" />
+    <state width="2506" height="746" key="GridCell.Tab.0.bottom" timestamp="1589905792268">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2506" height="746" key="GridCell.Tab.0.bottom/0.23.2560.1417@0.23.2560.1417" timestamp="1589905792268" />
+    <state width="2506" height="746" key="GridCell.Tab.0.center" timestamp="1589905792268">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2506" height="746" key="GridCell.Tab.0.center/0.23.2560.1417@0.23.2560.1417" timestamp="1589905792268" />
+    <state width="2506" height="746" key="GridCell.Tab.0.left" timestamp="1589905792267">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2506" height="746" key="GridCell.Tab.0.left/0.23.2560.1417@0.23.2560.1417" timestamp="1589905792267" />
+    <state width="2506" height="746" key="GridCell.Tab.0.right" timestamp="1589905792268">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2506" height="746" key="GridCell.Tab.0.right/0.23.2560.1417@0.23.2560.1417" timestamp="1589905792268" />
+    <state x="702" y="283" width="1417" height="897" key="SettingsEditor" timestamp="1589905510713">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="702" y="283" width="1417" height="897" key="SettingsEditor/0.23.2560.1417@0.23.2560.1417" timestamp="1589905510713" />
   </component>
 </project>

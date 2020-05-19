@@ -5,387 +5,286 @@
 		<Option title="chess-engine"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\shallow-blue-fork\;CMake Files\src\tinyosc\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="chess-engine-test">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/chess-engine-test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 chess-engine-test"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="chess-engine-test/fast">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/chess-engine-test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 chess-engine-test/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="test">
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 test"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="chess-engine">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/chess-engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
+				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/build/chess-engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork"/>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 chess-engine"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 chess-engine"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="chess-engine/fast">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/chess-engine" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
+				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/build/chess-engine" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork"/>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 chess-engine/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 chess-engine/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="tiny-osc-test">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/tiny-osc-test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 tiny-osc-test"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tiny-osc-test/fast">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/tiny-osc-test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 tiny-osc-test/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tiny_osc">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/tiny_osc.dir/tiny_osc.objlib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
+			<Target title="shallow-blue">
+				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/libshallow-blue.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 tiny_osc"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 shallow-blue"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="tiny_osc/fast">
-				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/tiny_osc.dir/tiny_osc.objlib" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine"/>
+			<Target title="shallow-blue/fast">
+				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/libshallow-blue.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 tiny_osc/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 shallow-blue/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tiny-osc">
+				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/libtiny-osc.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 tiny-osc"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tiny-osc/fast">
+				<Option output="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/libtiny-osc.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 tiny-osc/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/tiny_osc.dir/src/tinyosc/tinyosc.c.o">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
-			<Option target="tiny-osc-test"/>
-		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/main.cpp">
 			<Option target="chess-engine"/>
 		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/shallow_blue_interface.hpp">
+			<Option target="shallow-blue"/>
+		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/attacks.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/attacks.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
+		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/bitutils.h">
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/board.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/board.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/book.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/book.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
+		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/defs.h">
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/eval.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/eval.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/generalmovepicker.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/generalmovepicker.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/main.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/move.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/move.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/movegen.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/movegen.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/movepicker.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/movepicker.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/option.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/option.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/orderinginfo.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/orderinginfo.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/pawnstructuretable.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/pawnstructuretable.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/psquaretable.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/psquaretable.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/qsearchmovepicker.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/qsearchmovepicker.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/rays.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/rays.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/search.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/search.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/transptable.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/transptable.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
+		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/transptableentry.h">
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/uci.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/uci.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
+		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/version.h">
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/zkey.cc">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/src/zkey.h">
-			<Option target="chess-engine-test"/>
-			<Option target="chess-engine"/>
+			<Option target="shallow-blue"/>
 		</Unit>
-		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/chess_engine_tests.cpp">
-			<Option target="chess-engine-test"/>
-		</Unit>
-		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tests/tiny_osc_tests.cpp">
-			<Option target="tiny-osc-test"/>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/osc_interface.h">
+			<Option target="tiny-osc"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/tinyosc.c">
-			<Option target="tiny_osc"/>
+			<Option target="tiny-osc"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/tinyosc.h">
-			<Option target="tiny_osc"/>
+			<Option target="tiny-osc"/>
 		</Unit>
 		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\shallow-blue-fork\"/>
+		</Unit>
+		<Unit filename="/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\tinyosc\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

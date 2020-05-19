@@ -267,8 +267,7 @@ uint32_t tosc_writeNextMessage(tosc_bundle *b,
   return i;
 }
 
-uint32_t tosc_writeMessage(char *buffer, const int len,
-    const char *address, const char *format, ...) {
+uint32_t tosc_writeMessage(char *buffer, const int len, const char *address, const char *format, ...) {
   va_list ap;
   va_start(ap, format);
   const uint32_t i = tosc_vwrite(buffer, len, address, format, ap);

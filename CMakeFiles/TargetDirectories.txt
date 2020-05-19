@@ -1,7 +1,11 @@
 /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/rebuild_cache.dir
 /Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/edit_cache.dir
-/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine-test.dir
-/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/test.dir
-/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/chess-engine.dir
-/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/tiny-osc-test.dir
-/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/CMakeFiles/tiny_osc.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/CMakeFiles/rebuild_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/CMakeFiles/edit_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/CMakeFiles/chess-engine.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/CMakeFiles/rebuild_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/CMakeFiles/edit_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/shallow-blue-fork/CMakeFiles/shallow-blue.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/CMakeFiles/rebuild_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/CMakeFiles/edit_cache.dir
+/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-engine/src/tinyosc/CMakeFiles/tiny-osc.dir
