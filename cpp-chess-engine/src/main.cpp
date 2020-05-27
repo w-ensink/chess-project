@@ -69,6 +69,7 @@ auto simulateChessGame (const std::vector<std::string_view>& moves)
 {
     auto oscSender = juce::OSCSender();
     oscSender.connect ("127.0.0.1", 5000);
+    std::cout << "OSC Sending to port 5000\n";
 
     eon::initChessEngine();
     Uci::board.setToStartPos();
@@ -87,12 +88,77 @@ auto simulateChessGame (const std::vector<std::string_view>& moves)
 }
 
 
+using MessageLoopCallback = juce::OSCReceiver::Listener<juce::OSCReceiver::RealtimeCallback>;
 
-int main (int argc, char* argv[])
+class OSC_Callback    : public MessageLoopCallback
 {
+    void oscMessageReceived (const juce::OSCMessage& message) override
+    {
+        std::cout << "Received message on addres: " << message.getAddressPattern().toString()
+                  << ": ";
+
+        for (const auto& arg : message)
+        {
+            if      (arg.isInt32())   std::cout << arg.getInt32();
+            else if (arg.isString())  std::cout << arg.getString();
+            else if (arg.isFloat32()) std::cout << arg.getFloat32();
+
+            std::cout << " ";
+        }
+
+        std::cout << std::endl;
+    }
+
+    void oscBundleReceived (const juce::OSCBundle& ) override
+    {
+        std::cout << "buundle\n";
+    }
+};
+
+
+
+
+int chessMain()
+{
+    auto receiver = juce::OSCReceiver();
+    auto callback = OSC_Callback();
+
+    if (! receiver.connect (6000))
+        std::cout << "Error connecting to port\n";
+
+    receiver.addListener (&callback);
+    std::cout << "Listening to OSC on port 6000\n";
+
     simulateChessGame ({"e2e4", "d7d5", "e4d5"});
+
+    std::cout << "finished chess game, press enter to exit\n";
+
+    std::cin.get();
 
     return 0;
 }
 
 
+//==============================================================================
+class ConsoleApplication : public juce::JUCEApplicationBase
+{
+public:
+    const juce::String getApplicationName() override    { return "ConsoleApplication"; }
+    const juce::String getApplicationVersion() override { return "0.0.1"; }
+
+    void initialise (const juce::String& /*commandLineParameters*/) override
+    {
+        chessMain();
+    }
+
+    void unhandledException (const std::exception*, const juce::String &, int) override {}
+    bool moreThanOneInstanceAllowed() override { return false; }
+    void anotherInstanceStarted (const juce::String&) override {}
+    void systemRequestedQuit() override {}
+    void resumed() override {}
+    void suspended() override {}
+
+    void shutdown() override {}
+};
+
+START_JUCE_APPLICATION(ConsoleApplication)
