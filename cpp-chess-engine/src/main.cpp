@@ -3,10 +3,9 @@
 
 
 #include <shallow_blue_interface.hpp>
-
-#include "utils.h"
 #include <juce_core/juce_core.h>
 #include <juce_osc/juce_osc.h>
+#include "utils.h"
 #include <zconf.h>
 
 auto evaluateCurrentPosition()
@@ -88,14 +87,31 @@ auto simulateChessGame (const std::vector<std::string_view>& moves)
 }
 
 
-using MessageLoopCallback = juce::OSCReceiver::Listener<juce::OSCReceiver::RealtimeCallback>;
+using RealtimeCallback = juce::OSCReceiver::Listener<juce::OSCReceiver::RealtimeCallback>;
 
-class OSC_Callback    : public MessageLoopCallback
+
+class ChessSimulator    : public RealtimeCallback,
+                          private juce::OSCReceiver,
+                          private juce::OSCSender
 {
+public:
+    ChessSimulator (int sending, int receiving)
+    {
+        if (! juce::OSCReceiver::connect (receiving))
+            std::cout << "Error connecting receiver\n";
+
+        if (! juce::OSCSender::connect ("127.0.0.1", sending))
+            std::cout << "Error connecting sender\n";
+
+        juce::OSCReceiver::addListener (this);
+        eon::initChessEngine();
+        Uci::board.setToStartPos();
+        std::cout << "init done\n";
+    }
+
     void oscMessageReceived (const juce::OSCMessage& message) override
     {
-        std::cout << "Received message on addres: " << message.getAddressPattern().toString()
-                  << ": ";
+        std::cout << "Received message on address: " << message.getAddressPattern().toString() << ": ";
 
         for (const auto& arg : message)
         {
@@ -107,36 +123,26 @@ class OSC_Callback    : public MessageLoopCallback
         }
 
         std::cout << std::endl;
+
+        if (message.getAddressPattern().toString() == "/m")
+        {
+            auto move = message.begin()->getString().toStdString();
+
+            if (! eon::attemptMove (move))
+            {
+                auto m = juce::OSCMessage(juce::OSCAddressPattern ("/move_fail"));
+                m.addString ("failed_move");
+                send (m);
+            }
+            else
+            {
+                sendStats (*this);
+            }
+        }
     }
 
-    void oscBundleReceived (const juce::OSCBundle& ) override
-    {
-        std::cout << "buundle\n";
-    }
+
 };
-
-
-
-
-int chessMain()
-{
-    auto receiver = juce::OSCReceiver();
-    auto callback = OSC_Callback();
-
-    if (! receiver.connect (6000))
-        std::cout << "Error connecting to port\n";
-
-    receiver.addListener (&callback);
-    std::cout << "Listening to OSC on port 6000\n";
-
-    simulateChessGame ({"e2e4", "d7d5", "e4d5"});
-
-    std::cout << "finished chess game, press enter to exit\n";
-
-    std::cin.get();
-
-    return 0;
-}
 
 
 //==============================================================================
@@ -146,10 +152,7 @@ public:
     const juce::String getApplicationName() override    { return "ConsoleApplication"; }
     const juce::String getApplicationVersion() override { return "0.0.1"; }
 
-    void initialise (const juce::String& /*commandLineParameters*/) override
-    {
-        chessMain();
-    }
+    void initialise (const juce::String& /*commandLineParameters*/) override {}
 
     void unhandledException (const std::exception*, const juce::String &, int) override {}
     bool moreThanOneInstanceAllowed() override { return false; }
@@ -159,6 +162,8 @@ public:
     void suspended() override {}
 
     void shutdown() override {}
+
+    ChessSimulator sim {5000, 6000};
 };
 
 START_JUCE_APPLICATION(ConsoleApplication)
