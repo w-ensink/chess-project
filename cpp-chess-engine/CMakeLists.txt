@@ -11,7 +11,7 @@ target_sources(ChessEngine PRIVATE src/main.cpp)
 
 target_compile_definitions(ChessEngine PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
 
-target_link_libraries(ChessEngine PRIVATE shallow-blue tiny-osc juce::juce_core juce::juce_events juce::juce_osc)
+target_link_libraries(ChessEngine PRIVATE shallow-blue juce::juce_core juce::juce_events juce::juce_osc)
 target_compile_options(ChessEngine PUBLIC -std=c++17 -O3 -Wall)
 
 set_target_properties(ChessEngine PROPERTIES

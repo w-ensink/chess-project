@@ -35,7 +35,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-project/cpp-chess-engine/src/shallow-blue-fork/cmake_install.cmake")
-  include("/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-project/cpp-chess-engine/src/tinyosc/cmake_install.cmake")
   include("/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-project/cpp-chess-engine/src/JUCE/cmake_install.cmake")
 
 endif()

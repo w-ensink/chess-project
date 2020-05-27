@@ -16,14 +16,6 @@ if(CMAKE_VERSION VERSION_LESS 3.0.0)
   message(FATAL_ERROR "This file relies on consumers using CMake 3.0.0 or greater.")
 endif()
 
-if(CMAKE_VERSION VERSION_LESS 3.0.0)
-  message(FATAL_ERROR "This file relies on consumers using CMake 3.0.0 or greater.")
-endif()
-
-if(CMAKE_VERSION VERSION_LESS 3.0.0)
-  message(FATAL_ERROR "This file relies on consumers using CMake 3.0.0 or greater.")
-endif()
-
 # Protect against multiple inclusion, which would fail when already imported targets are added once more.
 set(_targetsDefined)
 set(_targetsNotDefined)

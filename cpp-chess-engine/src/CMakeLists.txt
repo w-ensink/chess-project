@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.12)
 
 
 add_subdirectory(shallow-blue-fork)
-add_subdirectory(tinyosc)
 add_subdirectory(JUCE)
 
 
