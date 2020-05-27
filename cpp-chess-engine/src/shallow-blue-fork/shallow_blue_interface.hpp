@@ -37,7 +37,7 @@ namespace eon
         return false;
     }
 
-    bool attemptMove (const std::string& moveToAttempt)
+    bool attemptMove (std::string_view moveToAttempt)
     {
         MoveGen moveGenerator (Uci::board);
 

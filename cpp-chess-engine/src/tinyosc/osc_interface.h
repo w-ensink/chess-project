@@ -170,6 +170,12 @@ public:
     }
 
 
+    auto pollForMessages() -> std::unique_ptr<OSC_Message>
+    {
+        return nullptr;
+    }
+
+
     void stopListening()
     {
         shouldKeepListening = false;
