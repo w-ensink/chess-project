@@ -38,6 +38,7 @@ extern U64 PAWN_SHIELD_MASKS[2][64];
  * @brief Weights for each piece used to calculate the game phase based off
  * remaining material
  */
+/*
 const int PHASE_WEIGHTS[6] = {
     [PAWN] = 0,
     [ROOK] = 2,
@@ -46,6 +47,9 @@ const int PHASE_WEIGHTS[6] = {
     [QUEEN] = 4,
     [KING] = 0
 };
+ */
+const int PHASE_WEIGHTS[6] = {0,2,1,1,4,0};
+
 
 /**
  * @brief Weighted sum of the values in PHASE_WEIGHTS used for calculating
@@ -61,6 +65,7 @@ extern int PHASE_WEIGHT_SUM;
 /**
  * @brief Bonuses given to a player having a move available (opening/endgame)
  */
+ /*
 const int MOBILITY_BONUS[2][6] = {
     [OPENING] = {
         [PAWN] = 0,
@@ -79,10 +84,16 @@ const int MOBILITY_BONUS[2][6] = {
         [KING] = 1
     }
 };
+*/
+const int MOBILITY_BONUS[2][6] = {{0,0,4,3,0,0},{1,1,6,2,1,1}};
+
+
+
 
 /**
  * @brief Array indexed by [Phase][PieceType] of material values (in centipawns)
  */
+ /*
 const int MATERIAL_VALUES[2][6] = {
     [OPENING] = {
         [PAWN] = 100,
@@ -101,36 +112,45 @@ const int MATERIAL_VALUES[2][6] = {
         [KING] = 0
     }
 };
+  */
+
+const int MATERIAL_VALUES[2][6] = {{100,500,320,330,900,0},{140,500,300,300,900,0}};
 
 /**
  * @brief Bonuses given to a player for each rook on an open file (opening/endgame)
  */
-const int ROOK_OPEN_FILE_BONUS[2] = {[OPENING] = 20, [ENDGAME] = 40};
+//const int ROOK_OPEN_FILE_BONUS[2] = {[OPENING] = 20, [ENDGAME] = 40};
+const int ROOK_OPEN_FILE_BONUS[2] = {20,40};
 
 /**
  * @brief Bonuses given to a player for having a passed pawn (opening/endgame)
  */
-const int PASSED_PAWN_BONUS[2] = {[OPENING] = 10, [ENDGAME] = 70};
+//const int PASSED_PAWN_BONUS[2] = {[OPENING] = 10, [ENDGAME] = 70};
+const int PASSED_PAWN_BONUS[2] = {10,70};
 
 /**
  * @brief Penalties given to a player for having a doubled pawn (opening/endgame)
  */
-const int DOUBLED_PAWN_PENALTY[2] = {[OPENING] = -20, [ENDGAME] = -30};
+//const int DOUBLED_PAWN_PENALTY[2] = {[OPENING] = -20, [ENDGAME] = -30};
+const int DOUBLED_PAWN_PENALTY[2] = {-20,-30};
 
 /**
  * @brief Penalties given to a player for having an isolated pawn (opening/endgame)
  */
-const int ISOLATED_PAWN_PENALTY[2] = {[OPENING] = -15, [ENDGAME] = -30};
+//const int ISOLATED_PAWN_PENALTY[2] = {[OPENING] = -15, [ENDGAME] = -30};
+const int ISOLATED_PAWN_PENALTY[2] = {-15,-30};
 
 /**
  * @brief Bonuses given to a player for having bishops on black and white squares (opening/endgame)
  */
-const int BISHOP_PAIR_BONUS[2] = {[OPENING] = 45, [ENDGAME] = 55};
+//const int BISHOP_PAIR_BONUS[2] = {[OPENING] = 45, [ENDGAME] = 55};
+const int BISHOP_PAIR_BONUS[2] = {45,55};
 
 /**
  * @brief Bonuses given to a player for each pawn shielding their king (opening/endgame)
  */
-const int KING_PAWN_SHIELD_BONUS[2] = {[OPENING] = 10, [ENDGAME] = 0};
+//const int KING_PAWN_SHIELD_BONUS[2] = {[OPENING] = 10, [ENDGAME] = 0};
+const int KING_PAWN_SHIELD_BONUS[2] = {10,0};
 
 /**
  * @brief Initializes all inner constants used by functions in the Eval namespace
