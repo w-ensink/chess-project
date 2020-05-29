@@ -8,17 +8,21 @@
 #define BITUTILS_H
 
 #ifdef _MSC_VER
-#  include <intrin.h>
-#  define __builtin_popcount __popcnt
+#include <intrin.h>
+#define __builtin_popcount __popcnt
 
 
-uint32_t __inline __builtin_ffsll(uint64_t value)
+int __inline __builtin_ffsll (unsigned long long value)
 {
-    uint32_t index = 0;
-    _BitScanForward64(&index, value);
-    return index + 1;
+    unsigned long index = 0;
+
+    if (! _BitScanForward64 (&index, value)
+        return 0;
+
+    return static_cast<int> (index + 1);
 }
 
+/*
 uint32_t __inline __builtin_clzll(uint64_t value)
 {
   uint32_t leading_zero = 0;
@@ -27,6 +31,7 @@ uint32_t __inline __builtin_clzll(uint64_t value)
   else
     return 64;
 }
+ */
 
 #endif
 

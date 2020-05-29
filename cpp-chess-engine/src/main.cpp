@@ -6,7 +6,7 @@
 #include <juce_core/juce_core.h>
 #include <juce_osc/juce_osc.h>
 #include "utils.h"
-#include <zconf.h>
+//#include <zconf.h>
 
 auto evaluateCurrentPosition()
 {
@@ -80,7 +80,7 @@ auto simulateChessGame (const std::vector<std::string_view>& moves)
 
         sendStats (oscSender);
 
-        sleep (rand() % 5 + 1);
+        //sleep (rand() % 5 + 1);
     }
 
     return true;
@@ -140,8 +140,6 @@ public:
             }
         }
     }
-
-
 };
 
 
@@ -166,4 +164,4 @@ public:
     ChessSimulator sim {5000, 6000};
 };
 
-START_JUCE_APPLICATION(ConsoleApplication)
+START_JUCE_APPLICATION (ConsoleApplication)
