@@ -7,6 +7,31 @@
 #ifndef BITUTILS_H
 #define BITUTILS_H
 
+#ifdef _MSC_VER
+#  include <intrin.h>
+#  define __builtin_popcount __popcnt
+
+
+uint32_t __inline __builtin_ffsll(uint64_t value)
+{
+    uint32_t index = 0;
+    _BitScanForward64(&index, value);
+    return index + 1;
+}
+
+uint32_t __inline __builtin_clzll(uint64_t value)
+{
+  uint32_t leading_zero = 0;
+  if (_BitScanReverse64(&leading_zero, value))
+    return 63 - leading_zero;
+  else
+    return 64;
+}
+
+#endif
+
+
+
 /**
  * @brief Sets the LSB of the given bitboard to 0 and returns its index.
  *

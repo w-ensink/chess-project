@@ -12,6 +12,6 @@ target_sources(ChessEngine PRIVATE src/main.cpp)
 target_compile_definitions(ChessEngine PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
 
 target_link_libraries(ChessEngine PRIVATE shallow-blue juce::juce_core juce::juce_events juce::juce_osc)
-target_compile_options(ChessEngine PUBLIC -std=c++17 -O3 -Wall -Wpedantic)
+#target_compile_options(ChessEngine PUBLIC -std=c++17 -O3 -Wall -Wpedantic)
 
 #set_target_properties(ChessEngine PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
