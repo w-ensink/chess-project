@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -34,8 +34,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-project/cpp-chess-engine/src/shallow-blue-fork/cmake_install.cmake")
-  include("/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-project/cpp-chess-engine/src/tinyosc/cmake_install.cmake")
+  include("/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-project/cpp-chess-engine/cmake-build-debug/src/shallow-blue-fork/cmake_install.cmake")
+  include("/Users/wouter/Documents/School/SysteemBasis/csd_proj/chess-project/cpp-chess-engine/cmake-build-debug/src/tinyosc/cmake_install.cmake")
 
 endif()
 

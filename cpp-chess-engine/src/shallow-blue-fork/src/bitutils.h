@@ -16,7 +16,7 @@ int __inline __builtin_ffsll (unsigned long long value)
 {
     unsigned long index = 0;
 
-    if (! _BitScanForward64 (&index, value)
+    if (! _BitScanForward64 (&index, value))
         return 0;
 
     return static_cast<int> (index + 1);
