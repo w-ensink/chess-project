@@ -23,6 +23,7 @@ scanned = False
 # Runtime variables
 moving_from = None
 readout = []
+old_readout = []
 
 for dev in devs:
     for i in range(15):
@@ -32,23 +33,40 @@ for pin in pins:
     pin.pull = digitalio.Pull.UP
 
 
+# Handle an open square
 def open_square(p):
-    global scanned
+    global moving_from
+    pindex = pins.index(p)
+    readout[pindex] = 0
 
-    print("Is open")
-    if not scanned and pins.index(p) is 63:
-        scanned = True
+    # If the square was previously not open...
+    if old_readout[pindex] is not 0:
+        # ...we set the origin of movement to the current square
+        moving_from = pindex
 
 
+# Handle a closed square
 def close_square(p):
-    global scanned
+    global moving_from
+    pindex = pins.index(p)
+    readout[pindex] = 1
 
-    print("Is closed")
-    if not scanned and pins.index(p) is 63:
-        scanned = True
+    # If the current square is also the origin of movement...
+    if moving_from is pindex:
+        # ...we reset the origin
+        moving_from = None
+
+
+def handle_osc():
+    # Send out OSC message with the current state of the board
+    print("OOO ESS SAY")
 
 
 while 1:
+
+    # Backup and reset the readout array for the next iteration of the process
+    old_readout = readout
+    readout = []
 
     # Loop over all defined pins
     for pin in pins:
@@ -80,3 +98,11 @@ while 1:
             close_square(pin)
 
     scanned = True
+
+    if readout.count(1) is 32:
+        moving_from = None
+
+    # If no move is currently taking place while the state of the board has changed...
+    if moving_from is None and readout is not old_readout:
+        # ...we send out an OSC message
+        handle_osc()
