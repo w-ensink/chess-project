@@ -35,13 +35,13 @@ public:
         serverAddress.sin_port = htons (port);
         serverAddress.sin_addr.s_addr = INADDR_ANY;
 
-        if (connect (serverFileDescriptor, (struct sockaddr*) &serverAddress, sizeof(serverAddress)) < 0)
+        if (connect (serverFileDescriptor, (struct sockaddr*) &serverAddress, sizeof (serverAddress)) < 0)
         {
             std::cout << "Local_OSC_Client: Failed to connect to Server\n";
             return;
         }
 
-        std::cout << "Local_OSC_Client: Connected to Port: " << port << "\n";
+        std::cout << "Local_OSC_Client: Sending to Port: " << port << "\n";
     }
 
     ~Local_OSC_Client()
@@ -116,7 +116,7 @@ public:
         serverAddress.sin_addr.s_addr = INADDR_ANY;
 
         bind (fileDescriptor, (struct sockaddr*) &serverAddress, sizeof (struct sockaddr_in));
-        std::cout << "Local_OSC_Server: Connected to Port: " << port << "\n";
+        std::cout << "Local_OSC_Server: Receiving on Port: " << port << "\n";
     }
 
     ~Local_OSC_Server()
