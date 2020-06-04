@@ -1,4 +1,7 @@
 
+#ifndef __SHALLOW_BLUE_INTERFACE__
+#define __SHALLOW_BLUE_INTERFACE__
+
 #include "src/uci.h"
 #include "src/attacks.h"
 #include "src/movepicker.h"
@@ -7,7 +10,7 @@
 
 namespace eon
 {
-    void initChessEngine()
+    inline void initChessEngine()
     {
         Rays::init();
         PSquareTable::init();
@@ -18,7 +21,7 @@ namespace eon
         Uci::init();
     }
 
-    int runShallowBlueOriginal()
+    inline int runShallowBlueOriginal()
     {
         initChessEngine();
         Uci::start();
@@ -26,7 +29,7 @@ namespace eon
         return 0;
     }
 
-    bool isValidMove (const std::string &moveToCheck)
+    inline bool isValidMove (const std::string &moveToCheck)
     {
         MoveGen moveGenerator (Uci::board);
 
@@ -37,7 +40,7 @@ namespace eon
         return false;
     }
 
-    bool attemptMove (std::string_view moveToAttempt)
+    inline bool attemptMove (std::string_view moveToAttempt)
     {
         MoveGen moveGenerator (Uci::board);
 
@@ -54,30 +57,32 @@ namespace eon
         return false;
     }
 
-    void initWithFEN (const std::string& fen)
+    inline void initWithFEN (const std::string& fen)
     {
         Uci::uciNewGame();
         Uci::board.setToFen (fen);
     }
 
-    void printBoard()
+    inline void printBoard()
     {
         std::cout << Uci::board.getStringRep() << '\n';
     }
 
-    void goToDepth (int depth)
+    inline void goToDepth (int depth)
     {
         Uci::goDepth (depth);
     }
 
-    MoveList getMovesForCurrentPosition()
+    inline MoveList getMovesForCurrentPosition()
     {
         return MoveGen (Uci::board).getMoves();
     }
 
-    int getCurrentScoreForWhite()
+    inline int getCurrentScoreForWhite()
     {
         return Eval::evaluate (Uci::board, WHITE);
     }
 
 } // namespace eon
+
+#endif

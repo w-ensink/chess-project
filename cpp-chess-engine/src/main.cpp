@@ -4,55 +4,11 @@
 
 #include <shallow_blue_interface.hpp>
 #include <osc_interface.h>
-#include <queue>
 #include <string>
+#include <queue>
 #include "utils.h"
+#include "MoveBuilder.h"
 
-
-auto evaluateCurrentPosition()
-{
-    auto score                  = Eval::evaluate (Uci::board, WHITE);
-    auto hasBishopPair          = Eval::hasBishopPair (Uci::board, WHITE);
-    auto numRooksOpenFiles      = Eval::rooksOnOpenFiles (Uci::board, WHITE);
-    auto mobility               = Eval::evaluateMobility (Uci::board, GamePhase::ENDGAME, WHITE);
-    auto numPassedPawns         = Eval::passedPawns (Uci::board, WHITE);
-    auto numDoubledPawns        = Eval::doubledPawns (Uci::board, WHITE);
-    auto numIsolatedPawns       = Eval::isolatedPawns (Uci::board, WHITE);
-    auto numPawnsShieldingKing  = Eval::pawnsShieldingKing (Uci::board, WHITE);
-
-    print ("score:", score);
-    print ("has bishop pair:", hasBishopPair);
-    print ("num rooks on open file:", numRooksOpenFiles);
-    print ("mobility:", mobility);
-    print ("num passed pawns:", numPassedPawns);
-    print ("num doubled pawns:", numDoubledPawns);
-    print ("num isolated pawns:", numIsolatedPawns);
-    print ("num pawns shielding king:", numPawnsShieldingKing);
-}
-
-
-
-/*
-auto simulateChessGame (Local_OSC_Client& sender, const std::vector<std::string_view>& moves)
-{
-    std::cout << "OSC Sending to port 5000\n";
-
-    eon::initChessEngine();
-    Uci::board.setToStartPos();
-
-    for (auto move : moves)
-    {
-        if (! eon::attemptMove (move))
-            return false;
-
-        sendStats (sender);
-
-        sleep (rand() % 5 + 1);
-    }
-
-    return true;
-}
- */
 
 /*
 0 = niks
@@ -141,39 +97,125 @@ auto sendStats (Local_OSC_Client& sender)
 }
 
 
+// handles all the different bitboards that will be sent from python and filters out
+// unusable noise, like when two flipped bits occur in a single board change
+// after a BB is added, it sends a message to it's listeners to signal where a pull or put has happened
+class BitBoardManager
+{
+public:
+    BitBoardManager() {}
+
+    void addBitBoard (uint64_t board)
+    {
+        if (bitBoardHistory.empty())
+            return bitBoardHistory.push_back (board);
+
+        auto flippedBits = bitBoardHistory.back() ^ board;
+
+        // more than one flipped bits in single change or no change at all
+        if (std::bitset<64> {flippedBits}.count() != 1)
+            return;
+
+        if (bitBoardHistory.back() < board)
+            for (auto* l : listeners)
+                l->handlePut (flippedBits);
+
+        else
+            for (auto* l : listeners)
+                l->handlePull (flippedBits);
+    }
+
+    void reset() noexcept
+    {
+        bitBoardHistory.clear();
+    }
+
+    struct Listener
+    {
+        virtual void handlePull (uint64_t bit) = 0;
+        virtual void handlePut (uint64_t square) = 0;
+    };
+
+private:
+
+    std::vector<Listener*> listeners;
+    std::vector<uint64_t> bitBoardHistory;
+};
+
+
+//=============================================================================================
+
+
+
+
+
+
+// Move manager manages the generation of moves
+// constructing a move is a complex process, with many edge cases
+// to solve this we use a callstack model where we analyze every item on the stack
+// if it is impossible to make a valid move with what is on the stack, we need to
+// unwind it until it is in a legal state again (i guess that is always just one pop)
+
+
+// ======================================================================================
+
+// Python stuurt staat van bord
+
+// Waiting for Python script to send bit board
+// Acting upon changes in board position
+// expecting bitboard from python at address "/bit_board" formatted as string
+// listening to Python on port 5001
+// sending data to Purr Data via port 6001
+
+
+// bitboard: u64, left bit = h8, right bit = a1
+
+// schaakmat spel
+// e2e4 e7e5 f1c4 b8c6 d1h5 g8f6 h5f7
+
+
 int main (int argc, char* argv[])
 {
     eon::initChessEngine();
     Uci::board.setToStartPos();
 
-    auto sendingPort = 5000u;
-    auto receivingPort = 6000u;
+    auto whitePieces = std::bitset<64> {Uci::board.getAllPieces (WHITE)};
+    print ("white pieces:", whitePieces);
+    eon::attemptMove("h2h3");
+    eon::attemptMove("a7a6");
+    whitePieces = std::bitset<64> {Uci::board.getAllPieces (WHITE)};
+    print ("white pieces:", whitePieces);
 
-    auto sender = Local_OSC_Client {sendingPort};
-    auto receiver = Local_OSC_Server {receivingPort};
 
-    receiver.startListening ([&] (std::unique_ptr<OSC_Message> message)
-    {
-        if (message->address == "/m")
-        {
-            auto move = message->getTypeAtIndex<std::string> (0);
+  //  auto sendingPort = 5000u;
+   // auto receivingPort = 6000u;
 
-            eon::attemptMove (move) ? sendStats (sender) : sender.sendMessage ("/move_failed", "i", 1);
-        }
+   // auto sender = Local_OSC_Client {sendingPort};
+   // auto receiver = Local_OSC_Server {receivingPort};
 
-        else if (message->address == "/quit")
-        {
-            receiver.stopListening();
-        }
-    });
+    //receiver.startListening ([&] (std::unique_ptr<OSC_Message> message)
+    //{
+    //    if (message->address == "/m")
+    //    {
+    //        auto move = message->getTypeAtIndex<std::string> (0);
+//
+    //        eon::attemptMove (move) ? sendStats (sender) : sender.sendMessage ("/move_failed", "i", 1);
+    //    }
+//
+    //    else if (message->address == "/quit")
+    //    {
+    //        receiver.stopListening();
+    //    }
+    //});
 
-    while (receiver.isListening())
-    {
-        std::this_thread::sleep_for (std::chrono::milliseconds (50));
-    }
 
-    std::cout << "done simulating chess game...\n";
-    std::cin.get();
+    //while (receiver.isListening())
+    //{
+    //    std::this_thread::sleep_for (std::chrono::milliseconds (50));
+    //}
+
+    //std::cout << "done simulating chess game...\n";
+    //std::cin.get();
 
     return 0;
 }
