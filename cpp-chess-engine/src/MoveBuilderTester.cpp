@@ -39,10 +39,14 @@ void MoveBuilderTester::illegalMoveBuildingState()
 
 void MoveBuilderTester::startTestCase (MoveInstructionSet& test)
 {
+    std::cout << "\n======================== START TEST CASE ========================\n\n";
+
     // put board in start position
     initializeChessEngineDefault();
     Uci::board.setToFen (test.startPosition);
     moveBuilder.clearMove();
+
+
 
     // perform all puts and pulls to simulate person changing the board
     while (test.hasMoreTest())
@@ -60,23 +64,27 @@ void MoveBuilderTester::startTestCase (MoveInstructionSet& test)
     auto result = moveBuilder.getConstructedMove();
     auto recovery = moveBuilder.needsRecovery();
 
-    std::cout << "\n======================== START TEST ========================\n\n";
 
     // if the result was as expected
     if (result == test.expectedResult)
     {
 
-        std::cout << "Test succeeded: " << test.testName << ": " << test.expectedResult << "\n\n";
+        std::cout << "Test Succeeded: " << test.testName << ": " << test.expectedResult << "\n\n";
     }
     else
     {
-        std::cout << "Test failed: " << test.testName << ": expected: " << test.expectedResult
+        std::cout << "Test Failed: " << test.testName << ": expected: " << test.expectedResult
                   << " but got: " << result << "\n\n";
     }
 
+    // print list of put and pull commands...
+    std::cout << "Commands: ";
+    for (auto& s : test.instructionStrings) std::cout << s << " ";
+    std::cout << "\n\n";
+
     printMoveBuilderState();
 
-    std::cout << "\n======================== END TEST ========================\n";
+    std::cout << "\n======================== END TEST CASE ========================\n";
 }
 
 
@@ -95,9 +103,9 @@ void MoveBuilderTester::performAllTests()
 void MoveBuilderTester::printMoveBuilderState()
 {
     auto validMove = moveBuilder.stateCanConstructValidMove();
-    auto recovery = moveBuilder.needsRecovery();
+    auto recovery  = moveBuilder.needsRecovery();
 
-    std::cout << "MoveBuilderState:\n";
+    std::cout << "Final MoveBuilderState:\n";
     std::cout << "\trecovery:\t\t"    << std::boolalpha << recovery  << '\n';
     std::cout << "\tconstructable:\t" << std::boolalpha << validMove << '\n';
     std::cout << "\tpullI:\t\t\t"     << getSquareForBit (moveBuilder.pullI) << '\n';

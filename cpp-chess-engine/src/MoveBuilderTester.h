@@ -32,11 +32,13 @@ struct MoveInstruction
 struct MoveInstructionSet
 {
     using StringList = std::initializer_list<std::string>;
+
     // steps should be inserted as a list
     //  - pull('a1') -> "-a1"
     //  - put('a1')  -> "+a1"
     MoveInstructionSet (std::string pos, std::string name, std::string move, StringList list)
     {
+        instructionStrings = list;
         startPosition = std::move(pos);
         expectedResult = std::move(move);
         testName = std::move(name);
@@ -64,6 +66,7 @@ struct MoveInstructionSet
     }
 
     std::string startPosition;
+    std::vector<std::string> instructionStrings;
     std::queue<MoveInstruction> instructionQueue;
     std::string expectedResult;
     std::string testName;
@@ -71,7 +74,7 @@ struct MoveInstructionSet
 
 
 
-
+// Test engine for the MoveBuilder
 class MoveBuilderTester   : MoveBuilder::Listener
 {
 public:
@@ -112,17 +115,34 @@ private:
 
 // ===============================================================================================
 
+
+// function to use to test the move builder
 inline void performMoveBuilderTest()
 {
     auto tester = MoveBuilderTester{};
     auto startFen = std::string {"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"};
-
+    auto testFen  = std::string {"rnb1kbnr/p1p1pppp/1p1p4/2P1q3/3P4/8/PP2PPPP/RNBQKBNR w KQkq - 0 1"};
 
     // move e2e4 from start position: pull(e2) put(e4)
     tester.addInstructionSet (startFen, "simple_move_non_cap", "e2e4", {"-e2", "+e4"});
 
     // move e2e4 from start position, with doubt: pull(a2) put(a2) pull(e2) put(e4)
     tester.addInstructionSet (startFen, "doubt_move_non_cap", "e2e4", {"-a2", "+a2", "-e2", "+e4"});
+
+    // move d4e5 from start position, without doubt, with capture
+    // pull(d4) pull(e5) put(e5)
+    tester.addInstructionSet (testFen, "certain_move_cap", "d4e5", {"-d4", "-e5", "+e5"});
+
+    // same move as above, with a doubt:
+    // pull(c5) pull(d6) put(d6) put(c5) -> pull(d4) pull(e5) put(e5)
+    tester.addInstructionSet (testFen, "doubt_move_cap", "d4e5", {"-c5", "-d6", "+d6", "+c5", "-d4", "-e5", "+e5"});
+
+    // same move as about, with a doubt and recovery mode
+    // pull(c5) pull(d6) pull(b1) [enter_rec] put(b1) [exit_rec] put(d6) put(c5) -> pull(d4) pull(e5) put(e5)
+    tester.addInstructionSet (testFen, "doubt_move_cap_recovery", "d4e5", {"-c5", "-d6", "-b1", "+b1", "+d6", "+c5", "-d4", "-e5", "+e5"});
+
+    // test invalid input
+    tester.addInstructionSet (testFen, "incomplete_move", "invalid", {"-c5", "-d6", "-b1", "+d6", "+c5", "-d4", "-e5", "+e5"});
 
     // start the test engine
     tester.performAllTests();

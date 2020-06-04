@@ -113,6 +113,9 @@ void MoveBuilder::update()
         pullA = 0ull;
     }
 
+    // notify listeners if recovery mode is active
+    if (needsRecovery())
+        listener->illegalMoveBuildingState();
 }
 
 
