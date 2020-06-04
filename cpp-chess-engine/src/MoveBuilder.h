@@ -47,6 +47,9 @@
 // 00000000 00000000 00000000 00000000   00000000 00000000 00000000 00000001 ==> a1
 [[nodiscard]] inline std::string getSquareForBit (uint64_t word)
 {
+    if (! word)
+        return "no_square";
+
     auto bitIndex = indexOfSetBit (word);
     auto file = 'h' - static_cast<char> (bitIndex % 8);
     auto rank = '1' + static_cast<char> (7 - (bitIndex / 8));
@@ -82,6 +85,8 @@ public:
         virtual void illegalMoveBuildingState() = 0;
     };
 
+    void setListener (Listener* l);
+
     // should be used by the input handler to give the builder input about put pieces
     void putPiece (uint64_t pos);
 
@@ -101,6 +106,7 @@ public:
     // if there are steps to undo, the recovery is active
     [[nodiscard]] bool needsRecovery() const;
 
+    friend class MoveBuilderTester;
 
 private:
 

@@ -8,7 +8,7 @@
 #include <queue>
 #include "utils.h"
 #include "MoveBuilder.h"
-
+#include "MoveBuilderTester.h"
 
 /*
 0 = niks
@@ -176,46 +176,7 @@ private:
 
 int main (int argc, char* argv[])
 {
-    eon::initChessEngine();
-    Uci::board.setToStartPos();
-
-    auto whitePieces = std::bitset<64> {Uci::board.getAllPieces (WHITE)};
-    print ("white pieces:", whitePieces);
-    eon::attemptMove("h2h3");
-    eon::attemptMove("a7a6");
-    whitePieces = std::bitset<64> {Uci::board.getAllPieces (WHITE)};
-    print ("white pieces:", whitePieces);
-
-
-  //  auto sendingPort = 5000u;
-   // auto receivingPort = 6000u;
-
-   // auto sender = Local_OSC_Client {sendingPort};
-   // auto receiver = Local_OSC_Server {receivingPort};
-
-    //receiver.startListening ([&] (std::unique_ptr<OSC_Message> message)
-    //{
-    //    if (message->address == "/m")
-    //    {
-    //        auto move = message->getTypeAtIndex<std::string> (0);
-//
-    //        eon::attemptMove (move) ? sendStats (sender) : sender.sendMessage ("/move_failed", "i", 1);
-    //    }
-//
-    //    else if (message->address == "/quit")
-    //    {
-    //        receiver.stopListening();
-    //    }
-    //});
-
-
-    //while (receiver.isListening())
-    //{
-    //    std::this_thread::sleep_for (std::chrono::milliseconds (50));
-    //}
-
-    //std::cout << "done simulating chess game...\n";
-    //std::cin.get();
+    performMoveBuilderTest();
 
     return 0;
 }

@@ -40,11 +40,12 @@ void MoveBuilder::putPiece (uint64_t pos)
         return putsToUndo.push (pos);
 
     // if there is still place left in the put registers-> put it there
-    if (puts[0] == 0ull) { puts[0] = pos; return; }
-    if (puts[1] == 0ull) { puts[1] = pos; return; }
+    if (puts[0] == 0ull) { puts[0] = pos; update(); return; }
+    if (puts[1] == 0ull) { puts[1] = pos; update(); return; }
 
     // else it is an illegal put (too many puts), and it should be undone
     putsToUndo.push (pos);
+    update();
 }
 
 
@@ -64,9 +65,9 @@ void MoveBuilder::pullPiece (uint64_t pos)
             pullA = pos;
     }
 
-        // if the square contained an inactive player:
-        //  - the puts contain this position(so an active piece could have been put on it)
-        //  - the puts don't contain this pos -> inactive is pulled
+    // if the square contained an inactive player:
+    //  - the puts contain this position(so an active piece could have been put on it)
+    //  - the puts don't contain this pos -> inactive is pulled
     else if (squareContainsInactivePlayer (pos))
     {
         // if pullI was set and pullA too and a put was done on this square
@@ -89,6 +90,8 @@ void MoveBuilder::pullPiece (uint64_t pos)
     {
         std::cout << "Error: pulling piece from empty square...\n";
     }
+
+    update();
 }
 
 
@@ -186,6 +189,13 @@ void MoveBuilder::clearMove()
     pullI = 0ull;
     puts[0] = 0ull;
     puts[1] = 0ull;
+
+    // clear undo stacks
+    while (! putsToUndo.empty())
+        putsToUndo.pop();
+
+    while (! pullsToUndo.empty())
+        pullsToUndo.pop();
 }
 
 
@@ -207,4 +217,9 @@ void MoveBuilder::clearMove()
 [[nodiscard]] uint64_t MoveBuilder::getOnePutSquare()
 {
     return puts[0] ? puts[0] : puts[1];
+}
+
+void MoveBuilder::setListener (MoveBuilder::Listener *l)
+{
+    listener = l;
 }
