@@ -63,14 +63,27 @@
 // d7 ==> 00000000 00001000 00000000 00000000   00000000 00000000 00000000 00000000
 [[nodiscard]] inline uint64_t getBitForSquare (const std::string& square)
 {
+    if (square == "no_square")
+        return 0x0ull;
+
     auto file = static_cast<uint32_t> (square[0] - 'a');
     auto rank = static_cast<uint32_t> (square[1] - '1');
     auto bitIndex = file + rank * 8;
-    return 0x01ull << bitIndex;
+    return 0x1ull << bitIndex;
 }
 
 // ========================================================================================
-
+//
+// MoveBuilder attempts to construct moves based on the current state of the Uci::board
+// and the given pull (taking a piece from the board) and put (placing a piece on the board) commands.
+// It is self correcting, which means it will accept the taking back of a move as long
+// as it still has the info of the construction (clearMove has not yet been called).
+// It also has some kind of recovery mode, which will activate when it is unable to follow
+// what is happening (e.g.: you pull two pieces of the same colour).
+// When it enters this mode, it will send a message to it's listener and waits for the piece that
+// caused the activation of the recovery mode, to be put back.
+// This has to be done in the exact opposite order you picked them up, otherwise you'll just get more
+// moves to undo.
 
 class MoveBuilder
 {
@@ -117,7 +130,7 @@ private:
     // undo's should be formatted in a stack.. steps should be undone in the opposite order
     std::stack<uint64_t> pullsToUndo; // contains the place where something needs to be put before advancing
     std::stack<uint64_t> putsToUndo;  // if a put is done while illegal, the system should wait for a pull from that pos
-    Listener* listener;
+    Listener* listener {nullptr};
 
 
     // handles cleaning and simplifying of the current state
@@ -132,7 +145,7 @@ private:
     // removes the given position from puts, if it contains it
     void removeFromPuts (uint64_t pos);
 
-    // returns number of valid moves
+    // returns number of valid non null puts
     [[nodiscard]] int countPuts() const;
 
     // gets the square with the destination, assuming only one put is active

@@ -10,10 +10,13 @@ void MoveBuilder::handlePutForRecovery (uint64_t pos)
 {
     // it's either not put back in the correct order, or it's a new mistake
     if (pullsToUndo.top() != pos)
-        return putsToUndo.push (pos);
+        putsToUndo.push (pos);
 
     // else it is the top of the stack, so the undo is handled by popping it off
-    pullsToUndo.pop();
+    else
+        pullsToUndo.pop();
+
+    update();
 }
 
 
@@ -22,10 +25,12 @@ void MoveBuilder::handlePullForRecovery (uint64_t pos)
 {
     // it's either not pulled in the right order, or it's a new mistake
     if (putsToUndo.top() != pos)
-        return pullsToUndo.push (pos);
-
+        pullsToUndo.push (pos);
     // else it's the top of the stack, so the undo is handled by popping it off
-    putsToUndo.pop();
+    else
+        putsToUndo.pop();
+
+    update();
 }
 
 
@@ -36,8 +41,8 @@ void MoveBuilder::putPiece (uint64_t pos)
         return handlePutForRecovery (pos);
 
     // if no piece has been pulled yet, putting one is illegal
-    if (! (pullA || pullI))
-        return putsToUndo.push (pos);
+    if (! (pullA || pullI)) { putsToUndo.push (pos); update(); return; }
+
 
     // if there is still place left in the put registers-> put it there
     if (puts[0] == 0ull) { puts[0] = pos; update(); return; }
@@ -133,11 +138,7 @@ void MoveBuilder::update()
         return true;
 
     // when you pick up your own and put it on an empty square
-    if (! pullI && ! putsContains (pullA) && ! putsEmpty())
-        return true;
-
-    // any other case is undefined...
-    return false;
+    return ! pullI && ! putsContains (pullA) && ! putsEmpty();
 }
 
 

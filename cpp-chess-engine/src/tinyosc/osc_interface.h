@@ -17,6 +17,7 @@
 #include <thread>
 #include <atomic>
 #include <fcntl.h>
+#include <iostream>
 #include "tinyosc.h"
 
 

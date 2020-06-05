@@ -154,9 +154,9 @@ void ChessEngine::handleReceivedOSC_Message (std::unique_ptr<OSC_Message> messag
     auto address = message->address;
 
     if (address == "/put")
-        moveBuilder.putPiece (boardIndexToUInt64 (message->getTypeAtIndex<int> (0)));
+        moveBuilder.putPiece (boardIndexToUInt64 (message->getTypeAtIndex<long> (0)));
     else if (address == "/pull")
-        moveBuilder.pullPiece (boardIndexToUInt64 (message->getTypeAtIndex<int> (0)));
+        moveBuilder.pullPiece (boardIndexToUInt64 (message->getTypeAtIndex<long> (0)));
     else if (address == "/commit")
         commitButtonPressed();
     else if ("/new_game")

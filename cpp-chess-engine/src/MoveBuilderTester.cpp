@@ -112,4 +112,6 @@ void MoveBuilderTester::printMoveBuilderState()
     std::cout << "\tpullA:\t\t\t"     << getSquareForBit (moveBuilder.pullA) << '\n';
     std::cout << "\tputs[0]:\t\t"     << getSquareForBit (moveBuilder.puts[0]) << '\n';
     std::cout << "\tputs[1]:\t\t"     << getSquareForBit (moveBuilder.puts[1]) << '\n';
+    std::cout << "\tnum puts undo:\t" << moveBuilder.putsToUndo.size() << '\n';
+    std::cout << "\tnum pulls undo:\t" << moveBuilder.putsToUndo.size() << '\n';
 }
