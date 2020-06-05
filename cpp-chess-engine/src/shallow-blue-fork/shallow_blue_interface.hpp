@@ -57,6 +57,12 @@ namespace eon
         return false;
     }
 
+    // check mate if no moves are possible
+    inline bool isCheckMate()
+    {
+        return MoveGen (Uci::board).getLegalMoves().size() == 0;
+    }
+
     inline void initWithFEN (const std::string& fen)
     {
         Uci::uciNewGame();

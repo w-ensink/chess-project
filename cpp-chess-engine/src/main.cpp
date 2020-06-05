@@ -10,54 +10,6 @@
 #include "MoveBuilder.h"
 #include "MoveBuilderTester.h"
 
-/*
-0 = niks
-1 = pion
-2 = toren
-3 = paard
-4 = loper
-5 = koningin
-6 = koning
-*/
-
-// Returns null terminated c-string of numbers, where the numbers correspond to the pieces
-// goes column by column, so first 8 chars represent the first column (or File A)
-// starting from the white side (Rank 1)
-auto boardToString() -> char*
-{
-    static char stringBuffer [65];
-    memset (stringBuffer, '0', 65);
-    stringBuffer[64] = '\0';
-
-    for (auto i = 1; i < 7; ++i)
-    {
-        auto symbol = '0' + (char) i;
-
-        auto piece = [] (auto index) noexcept -> int
-        {
-            switch (index)
-            {
-                case 1: return PAWN;
-                case 2: return ROOK;
-                case 3: return KNIGHT;
-                case 4: return BISHOP;
-                case 5: return QUEEN;
-                case 6: return KING;
-                default: return -1;
-            }
-        } (i);
-        
-        auto boardWhite = std::bitset<64> {Uci::board.getPieces (WHITE, static_cast<PieceType> (piece))};
-        auto boardBlack = std::bitset<64> {Uci::board.getPieces (BLACK, static_cast<PieceType> (piece))};
-
-        for (auto byte = 0; byte < 8; ++byte)
-            for (auto bit = 0; bit < 8; ++bit)
-                if (boardWhite.test (byte * 8 + bit) || boardBlack.test (byte * 8 + bit))
-                    stringBuffer[bit * 8 + byte] = symbol;
-    }
-
-    return stringBuffer;
-}
 
 
 // sends all stats of the Uci::board to the given Local_OSC_Client
@@ -146,7 +98,22 @@ private:
 //=============================================================================================
 
 
+auto simulateChessGame (std::initializer_list<std::string> moves)
+{
+    eon::initChessEngine();
+    Uci::board.setToStartPos();
 
+    for (auto& m : moves)
+    {
+        if (! eon::attemptMove (m))
+            std::cout << "Move failed: " << m << "\n";
+        else
+            std::cout << "Move Succeeded: " << m << " CheckMate: "
+                      << std::boolalpha << eon::isCheckMate() << "\n";
+    }
+
+    eon::printBoard();
+}
 
 
 
@@ -176,7 +143,9 @@ private:
 
 int main (int argc, char* argv[])
 {
-    performMoveBuilderTest();
+    //performMoveBuilderTest();
+
+    simulateChessGame ({"e2e4", "e7e5", "f1c4", "b8c6", "d1h5", "g8f6", "h5f7"});
 
     return 0;
 }

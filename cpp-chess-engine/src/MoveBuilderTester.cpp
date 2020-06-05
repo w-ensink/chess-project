@@ -95,7 +95,7 @@ void MoveBuilderTester::performAllTests()
         auto testCase = std::move (testInstructionSetQueue.front());
         testInstructionSetQueue.pop();
 
-        startTestCase (*testCase.get());
+        startTestCase (*testCase);
     }
 }
 
