@@ -51,8 +51,10 @@ while 1:
                 run_tester(dv, pin_glob)
             else:
                 print("Now exiting")
+                devs[dev].get_pin(pin_glob).value = False
                 exit()
     elif command == 'quit':
         print("Goodbye!")
+        devs[dev].get_pin(pin_glob).value = False
         exit()
 
