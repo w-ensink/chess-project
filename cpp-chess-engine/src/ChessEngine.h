@@ -63,6 +63,9 @@ private:
     Local_OSC_Server oscReceiver;
 
 
+    // function from base class MoveBuilder::Listener
+    void illegalMoveBuildingState() override;
+
     // called when the commit-move button was pressed on the physical board
     void commitButtonPressed();
 

@@ -6,6 +6,7 @@
 
 ChessEngine::ChessEngine()  : oscSender {5000}, oscReceiver {6000}
 {
+    moveBuilder.setListener (this);
     startNewGame();
     initReceiver();
 }
@@ -14,6 +15,7 @@ ChessEngine::ChessEngine()  : oscSender {5000}, oscReceiver {6000}
 ChessEngine::ChessEngine (uint32_t receivingPort, uint32_t sendingPort)
     : oscSender {sendingPort}, oscReceiver {receivingPort}
 {
+    moveBuilder.setListener (this);
     startNewGame();
     initReceiver();
 }
@@ -67,6 +69,7 @@ void ChessEngine::startNewGame()
     moveBuilder.clearMove();
     eon::initChessEngine();
     Uci::board.setToStartPos();
+    oscSender.sendMessage ("/new_game", "i", 1);
 }
 
 
@@ -136,6 +139,7 @@ void ChessEngine::sendOSC_Messages()
     }
 }
 
+
 void ChessEngine::initReceiver()
 {
     oscReceiver.startListening ([this] (std::unique_ptr<OSC_Message> message)
@@ -143,6 +147,7 @@ void ChessEngine::initReceiver()
         handleReceivedOSC_Message (std::move (message));
     });
 }
+
 
 void ChessEngine::handleReceivedOSC_Message (std::unique_ptr<OSC_Message> message)
 {
@@ -158,9 +163,17 @@ void ChessEngine::handleReceivedOSC_Message (std::unique_ptr<OSC_Message> messag
         startNewGame();
 }
 
+
 uint64_t ChessEngine::boardIndexToUInt64 (int index)
 {
     return 0x1ull << static_cast<uint64_t> (63 - index);
+}
+
+
+void ChessEngine::illegalMoveBuildingState()
+{
+    // a move construction failure, send message to Purr Data, but don't do anything else
+    oscSender.sendMessage ("/move_building_error", "i", 1);
 }
 
 
