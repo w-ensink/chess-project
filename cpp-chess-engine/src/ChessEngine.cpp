@@ -144,8 +144,11 @@ void ChessEngine::initReceiver()
 {
     oscReceiver.startListening ([this] (std::unique_ptr<OSC_Message> message)
     {
+        std::cout << "Engine Received: " << message->address << '\n';
         handleReceivedOSC_Message (std::move (message));
     });
+
+    std::this_thread::sleep_for (std::chrono::milliseconds (50));
 }
 
 

@@ -91,9 +91,15 @@ void MoveBuilder::pullPiece (uint64_t pos)
         else
             pullI = pos;
     }
+    // if during a move a piece was (temporarily) put on an empty square
+    else if (putsContains (pos))
+    {
+        // remove it from puts
+        removeFromPuts (pos);
+    }
     else
     {
-        std::cout << "Error: pulling piece from empty square...\n";
+        std::cout << "Error: pulling piece from empty square: " << "\n";
     }
 
     update();

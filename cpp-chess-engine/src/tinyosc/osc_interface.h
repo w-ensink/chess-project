@@ -125,7 +125,9 @@ public:
         if (shouldKeepListening)
         {
             shouldKeepListening = false;
-            listener.join();
+
+            if (listener.joinable())
+                listener.join();
         }
 
         close (fileDescriptor);
