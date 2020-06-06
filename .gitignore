@@ -3,8 +3,10 @@
 **/.DS_Store
 **/CMakeCache.txt
 **/CMakeFiles
+**/cmake-build-debug
 
 **/.idea
 **/*.a
 **/*.cbp
 **/ChessEngine_artefacts
+**/build
