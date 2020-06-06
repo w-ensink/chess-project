@@ -41,10 +41,16 @@ int main (int argc, char* argv[])
 {
     //performMoveBuilderTest();
 
-    performChessEngineTests();
+    auto sendingPort = 5001u;
+    auto receivingPort = 6001u;
+    print ("Chess Engine will send on:", sendingPort, "and receive on:", receivingPort);
+    auto engine = ChessEngine {receivingPort, sendingPort};
+    engine.startNewGame();
+    //performChessEngineTests();
     //Local_OSC_Server server {4000};
     //Local_OSC_Client client {4000};
-
+    print ("Press enter to stop engine");
+    std::cin.get();
 
     //server.startListening ([](std::unique_ptr<OSC_Message> m)
     //{
