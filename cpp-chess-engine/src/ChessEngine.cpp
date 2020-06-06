@@ -4,16 +4,45 @@
 
 #include "ChessEngine.h"
 
-ChessEngine::ChessEngine()  : oscSender {5000}, oscReceiver {6000}
+
+struct ChessEngine::ScoreManager
 {
-    moveBuilder.setListener (this);
-    startNewGame();
-    initReceiver();
-}
+    ScoreManager() = default;
+
+    // returns whether the last move was bad (0), neutral (1) or good (2) for the player
+    // that made the move and updates the internal score
+    int getScoreInfluence()
+    {
+        // since the move is already done, sides have switched,
+        // so the player that made the move is now the inactive player
+        auto player   = Uci::board.getInactivePlayer();
+        auto newScore = eon::getCurrentScoreForWhite();
+
+        // if the player is white, a negative score difference is actually negative
+        if (player == WHITE)
+        {
+            auto result = newScore == score ? 1 : (newScore > score ? 2 : 0);
+            score = newScore;
+            return result;
+        }
+
+        // if the player is black, a negative score difference is actually positive
+        auto result = newScore == score ? 1 : (newScore > score ? 0 : 2);
+        score = newScore;
+        return result;
+    }
+
+    // in the shallow-blue engine the score for black is always the score of white
+    // but negative, so we only need one variable to safe the previous score
+    int score {0};
+};
 
 
 ChessEngine::ChessEngine (uint32_t receivingPort, uint32_t sendingPort)
-    : oscSender {sendingPort}, oscReceiver {receivingPort}
+    : scoreManager {std::make_unique<ScoreManager>()},
+      oscSender {sendingPort},
+      oscReceiver {receivingPort}
+
 {
     moveBuilder.setListener (this);
     startNewGame();
@@ -84,6 +113,7 @@ void ChessEngine::commitButtonPressed()
         {
             // move successful, game moved on, clear move builder and send stats to Purr Data
             moveBuilder.clearMove();
+            oscSender.sendMessage ("/move_result", "i", scoreManager->getScoreInfluence());
             sendOSC_Messages();
         }
         else
@@ -158,10 +188,13 @@ void ChessEngine::handleReceivedOSC_Message (std::unique_ptr<OSC_Message> messag
 
     if (address == "/put")
         moveBuilder.putPiece (boardIndexToUInt64 (message->getTypeAtIndex<long> (0)));
+
     else if (address == "/pull")
         moveBuilder.pullPiece (boardIndexToUInt64 (message->getTypeAtIndex<long> (0)));
+
     else if (address == "/commit")
         commitButtonPressed();
+
     else if ("/new_game")
         startNewGame();
 }

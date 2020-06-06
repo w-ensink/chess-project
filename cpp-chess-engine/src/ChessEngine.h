@@ -25,6 +25,7 @@
 //  - '/move_failed'                [1]             (will be sent when a move wasn't valid in current pos)
 //  - '/colour'                     [is_white]      (will send 1 if active colour is white, else 0)
 //  - '/check_mate'                 [1]             (will be sent when someone is check mate)
+//  - '/move_result'                [0|1|2]         (sends whether move was bad(0), neutral(1) or good(2))
 //
 // the following addressed go separately for black and white (e.g.: '/white/score' & '/black/score'):
 //  - '/score'                      [num]           (sends score)
@@ -41,11 +42,9 @@
 class ChessEngine   : private MoveBuilder::Listener
 {
 public:
-    // sets up osc connections, default: send: 5000, receive: 6000
-    ChessEngine();
 
     // sets up osc connections with given ports
-    ChessEngine (uint32_t receivingPort, uint32_t sendingPort);
+    explicit ChessEngine (uint32_t receivingPort = 6000, uint32_t sendingPort = 5000);
 
     // closes the Local_OSC_Server (receiver)
     ~ChessEngine();
@@ -58,6 +57,10 @@ public:
 
 private:
 
+    // internal struct to handle score changes, to figure out if a move was good or bad
+    struct ScoreManager;
+
+    std::unique_ptr<ScoreManager> scoreManager;
     MoveBuilder moveBuilder;
     Local_OSC_Client oscSender;
     Local_OSC_Server oscReceiver;

@@ -94,9 +94,9 @@ struct OSC_Message
         switch (types[index])
         {
             case 'i':
-            case 'h': { return std::to_string(getTypeAtIndex<long> (index)); }
+            case 'h': { return std::to_string (getTypeAtIndex<long> (index)); }
             case 'f':
-            case 'd': { return std::to_string(getTypeAtIndex<double> (index)); }
+            case 'd': { return std::to_string (getTypeAtIndex<double> (index)); }
             case 's': { return getTypeAtIndex<std::string> (index); }
             default: return "[impossible]";
         }

@@ -74,9 +74,13 @@ private:
 };
 
 
+// ===================================================================================
+//
 // function to invoke to run all tests for the ChessEngine
 inline void performChessEngineTests()
 {
+    // simple pull(a2) put(a4) commit to start off tests
+    // should obviously produce a2a4 without a doubt
     auto simpleTestCase = EngineInstructionTestCase
     {
         "simple_single_move",
@@ -97,23 +101,54 @@ inline void performChessEngineTests()
         "two_move_doubt",
         {
                 {"/new_game", 1},
-                {"/pull", squareToBoardIndex("a2")},
-                {"/pull", squareToBoardIndex("e2")}, // enter recovery
-                {"/put",  squareToBoardIndex("e2")}, // exit recovery
-                {"/put",  squareToBoardIndex("a4")},
+                {"/pull", squareToBoardIndex ("a2")},
+                {"/pull", squareToBoardIndex ("e2")}, // enter recovery
+                {"/put",  squareToBoardIndex ("e2")}, // exit recovery
+                {"/put",  squareToBoardIndex ("a4")},
                 {"/commit", 1},
-                {"/pull", squareToBoardIndex("b7")},
-                {"/put",  squareToBoardIndex("b6")},
-                {"/pull", squareToBoardIndex("b6")},
-                {"/put",  squareToBoardIndex("b5")},
+                {"/pull", squareToBoardIndex ("b7")},
+                {"/put",  squareToBoardIndex ("b6")},
+                {"/pull", squareToBoardIndex ("b6")},
+                {"/put",  squareToBoardIndex ("b5")},
                 {"/commit", 1}
         },
         {"a2a4", "b7b5"}
     };
 
+    auto makePull = [] (auto square) -> std::pair<std::string, int>
+    {
+        return {"/pull", squareToBoardIndex (square)};
+    };
+
+    auto makePut = [] (auto square) -> std::pair<std::string, int>
+    {
+        return {"/put", squareToBoardIndex (square)};
+    };
+
+    auto commit  = std::pair<std::string, int> {"/commit", 1};
+    auto newGame = std::pair<std::string, int> {"/new_game", 1};
+
+
+    // hardest stress test: full game, multiple moves, multiple weird mistakes that have to be corrected
+    auto completeGame = EngineInstructionTestCase
+    {
+        "complete_game",
+        {
+                newGame,    // start game
+                makePull ("e2"), makePut ("e4"),  commit, // move 1
+                makePull ("e7"), makePull ("a7"), makePut ("e7"), makePull ("e7"),
+                                 makePut ("a7"),  makePut ("e5"), commit, // move 2
+                makePull ("f1"), makePut ("c5"),  commit, makePull ("c5"), makePut ("c4"), commit, // move 3
+
+
+        },
+        {"e2e4", "e7e5", "f1c4"} //, "b8c6", "d1h5", "g8f6", "h5f7"}
+    };
+
     auto testEngine = ChessEngineTester{};
     testEngine.addTest (simpleTestCase);
     testEngine.addTest (twoMoveDoubtCase);
+    testEngine.addTest (completeGame);
 
     std::cout << "START CHESS ENGINE TEST\n\n";
     testEngine.runAllTests();
