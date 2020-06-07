@@ -1,4 +1,4 @@
-# CSD Proj - Chess Music
+# CSD Proj - Check my Music Mate
 ---
 ## Description
 
