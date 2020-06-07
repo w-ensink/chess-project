@@ -8,6 +8,7 @@
 #include <cstdint>
 #include <shallow_blue_interface.hpp>
 #include <array>
+#include <stack>
 
 
 //=============================================================================================
