@@ -11,7 +11,7 @@ It consists of three main parts:
 
 
 ---
-#### Contributers
+## Contributors
 |Name|Contribution|
 |---|---|
 | Daniël Kamp|Chess Board Inferface|
