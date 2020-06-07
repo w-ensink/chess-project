@@ -10,7 +10,7 @@ import digitalio
 import argparse
 import random
 
-from pythonosc import udp_client
+from pythonosc.udp_client import SimpleUDPClient
 from adafruit_mcp230xx.mcp23017 import MCP23017
 
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -20,14 +20,10 @@ devs = [MCP23017(i2c, 0x20), MCP23017(i2c, 0x21), MCP23017(i2c, 0x22), MCP23017(
 pins = []
 
 # Setup for OSC
-parser = argparse.ArgumentParser()
-parser.add_argument("--ip", default="127.0.0.1",
-                    help="The ip of the OSC server")
-parser.add_argument("--port", type=int, default=5005,
-                    help="The port the OSC server is listening on")
-args = parser.parse_args()
+ip = "127.0.0.1"
+port = 5000
 
-client = udp_client.SimpleUDPClient(args.ip, args.port)
+client = SimpleUDPClient(ip, port)
 
 # Environment variables
 thresh = 5
