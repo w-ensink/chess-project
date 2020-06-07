@@ -7,7 +7,10 @@ import time
 import board
 import busio
 import digitalio
+import argparse
+import random
 
+from pythonosc import udp_client
 from adafruit_mcp230xx.mcp23017 import MCP23017
 
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -16,12 +19,21 @@ i2c = busio.I2C(board.SCL, board.SDA)
 devs = [MCP23017(i2c, 0x20), MCP23017(i2c, 0x21), MCP23017(i2c, 0x22), MCP23017(i2c, 0x23)]
 pins = []
 
+# Setup for OSC
+parser = argparse.ArgumentParser()
+parser.add_argument("--ip", default="127.0.0.1",
+                    help="The ip of the OSC server")
+parser.add_argument("--port", type=int, default=5005,
+                    help="The port the OSC server is listening on")
+args = parser.parse_args()
+
+client = udp_client.SimpleUDPClient(args.ip, args.port)
+
 # Environment variables
 thresh = 5
 scanned = False
 
 # Runtime variables
-moving_from = None
 readout = []
 old_readout = []
 
@@ -35,31 +47,24 @@ for pin in pins:
 
 # Handle an open square
 def open_square(p):
-    global moving_from
     pindex = pins.index(p)
     readout[pindex] = 0
 
     # If the square was previously not open...
     if old_readout[pindex] is not 0:
-        # ...we set the origin of movement to the current square
-        moving_from = pindex
+        # ...we send out an OSC message
+        client.send_message("/pull", pindex)
 
 
 # Handle a closed square
 def close_square(p):
-    global moving_from
     pindex = pins.index(p)
     readout[pindex] = 1
 
-    # If the current square is also the origin of movement...
-    if moving_from is pindex:
-        # ...we reset the origin
-        moving_from = None
-
-
-def handle_osc():
-    # Send out OSC message with the current state of the board
-    print("OOO ESS SAY")
+    # If the square was previously not closed...
+    if old_readout[pindex] is not 1:
+        # ...we send out an OSC message
+        client.send_message("/put", pindex)
 
 
 while 1:
@@ -96,13 +101,3 @@ while 1:
         else:
             # Else, trigger the close_square function
             close_square(pin)
-
-    scanned = True
-
-    if readout.count(1) is 32:
-        moving_from = None
-
-    # If no move is currently taking place while the state of the board has changed...
-    if moving_from is None and readout is not old_readout:
-        # ...we send out an OSC message
-        handle_osc()
