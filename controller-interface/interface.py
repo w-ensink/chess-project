@@ -32,6 +32,8 @@ client = SimpleUDPClient(ip, port)
 # Environment variables
 thresh = 15
 scanned = False
+moving = False
+move_store = None
 
 # Runtime variables
 readout = []
@@ -47,26 +49,40 @@ for pin in pins:
 
 # Handle an open square
 def open_square(p):
+    global moving, move_store
     pindex = pins.index(p)
     readout.append(0)
 
     # If the square was previously not open...
     if old_readout and old_readout[pindex] is not 0:
-        print("Pulling from " + str(lookup[pindex]))
-        # ...we send out an OSC message
-        client.send_message("/pull", lookup[pindex])
+        if not moving:
+            moving = True
+            move_store = pindex
+        else:
+            moving = False
+            print("Pulling from " + str(lookup[pindex]))
+            # ...we send out an OSC message
+            client.send_message("/put", lookup[move_store])
+            client.send_message("/pull", lookup[moving])
 
 
 # Handle a closed square
 def close_square(p):
+    global moving, move_store
     pindex = pins.index(p)
     readout.append(1)
 
     # If the square was previously not closed...
     if old_readout and old_readout[pindex] is not 1:
-        print("Putting to " + str(lookup[pindex]))
-        # ...we send out an OSC message
-        client.send_message("/put", lookup[pindex])
+        if not moving:
+            moving = True
+            move_store = pindex
+        else:
+            moving = False
+            print("Putting to " + str(lookup[pindex]))
+            # ...we send out an OSC message
+            client.send_message("/put", lookup[pindex])
+            client.send_message("/pull", lookup[move_store])
 
 
 while 1:
@@ -102,3 +118,6 @@ while 1:
         else:
             # Else, trigger the close_square function
             close_square(pin)
+
+    moving = False
+    move_store = None
