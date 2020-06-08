@@ -47,7 +47,7 @@ def open_square(p):
     readout.append(0)
 
     # If the square was previously not open...
-    if not old_readout and old_readout[pindex] is not 0:
+    if old_readout and old_readout[pindex] is not 0:
         # ...we send out an OSC message
         client.send_message("/pull", pindex)
 
@@ -58,7 +58,7 @@ def close_square(p):
     readout.append(1)
 
     # If the square was previously not closed...
-    if not old_readout and old_readout[pindex] is not 1:
+    if old_readout and old_readout[pindex] is not 1:
         # ...we send out an OSC message
         client.send_message("/put", pindex)
 
