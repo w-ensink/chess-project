@@ -76,7 +76,7 @@ private:
     void runTest (const EngineInstructionTestCase&);
 
     // attempts given move on given board position, returns whether it succeeded
-    [[nodiscard]] static bool attemptMoveOnBoard (std::string move, Board& board);
+    [[nodiscard]] static bool attemptMoveOnBoard (const std::string& move, Board& board);
 
     // Checks if both boards are the same based on their string representation
     [[nodiscard]] static bool areBoardsEqual (Board& a, Board& b);

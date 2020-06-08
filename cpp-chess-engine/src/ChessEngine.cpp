@@ -3,7 +3,7 @@
 //
 
 #include "ChessEngine.h"
-
+#include <cstring>
 
 struct ChessEngine::ScoreManager
 {

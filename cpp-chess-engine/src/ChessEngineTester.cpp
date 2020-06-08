@@ -22,7 +22,7 @@ ChessEngineTester::~ChessEngineTester()
 }
 
 
-bool ChessEngineTester::attemptMoveOnBoard (std::string move, Board& board)
+bool ChessEngineTester::attemptMoveOnBoard (const std::string& move, Board& board)
 {
     for (auto m : MoveGen (board).getLegalMoves())
     {
