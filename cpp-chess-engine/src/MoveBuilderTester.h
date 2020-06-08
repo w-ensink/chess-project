@@ -16,6 +16,12 @@
 
 #include <queue>
 #include <utility>
+#include <string>
+#include <vector>
+#include <memory>
+#include <initializer_list>
+#include <iostream>
+
 #include "MoveBuilder.h"
 
 // describes a single move instruction, e.g.: pull(e2) or put(a5)
@@ -39,9 +45,9 @@ struct MoveInstructionSet
     MoveInstructionSet (std::string pos, std::string name, std::string move, StringList list)
     {
         instructionStrings = list;
-        startPosition = std::move(pos);
-        expectedResult = std::move(move);
-        testName = std::move(name);
+        startPosition = std::move (pos);
+        expectedResult = std::move (move);
+        testName = std::move (name);
 
         for (auto i : list)
         {

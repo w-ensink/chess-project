@@ -125,7 +125,7 @@ void MoveBuilder::update()
     }
 
     // notify listeners if recovery mode is active
-    if (needsRecovery())
+    if (needsRecovery() && listener != nullptr)
         listener->illegalMoveBuildingState();
 }
 

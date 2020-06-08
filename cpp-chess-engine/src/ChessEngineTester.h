@@ -6,12 +6,21 @@
 #define CHESS_ENGINE_CHESSENGINETESTER_H
 
 #include <queue>
+#include <cstdint>
+#include <string>
+#include <vector>
+#include <utility>
+#include <iostream>
+
 #include "ChessEngine.h"
 
 
 // a1 == bitBoard 0x1 == index 63
 inline long u64ToBoardIndex (uint64_t bitBoard)
 {
+    if (! bitBoard)
+        return 0;
+
     long index = 0;
     while (! (bitBoard & 0x8000'0000'0000'0000ull))
     {
@@ -67,7 +76,7 @@ private:
     void runTest (const EngineInstructionTestCase&);
 
     // attempts given move on given board position, returns whether it succeeded
-    [[nodiscard]] static bool attemptMoveOnBoard (std::string move, Board& board);
+    [[nodiscard]] static bool attemptMoveOnBoard (const std::string& move, Board& board);
 
     // Checks if both boards are the same based on their string representation
     [[nodiscard]] static bool areBoardsEqual (Board& a, Board& b);
