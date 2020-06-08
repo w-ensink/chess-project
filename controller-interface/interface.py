@@ -48,6 +48,7 @@ def open_square(p):
 
     # If the square was previously not open...
     if old_readout and old_readout[pindex] is not 0:
+        print("Pulling from " + str(pindex))
         # ...we send out an OSC message
         client.send_message("/pull", pindex)
 
@@ -59,6 +60,7 @@ def close_square(p):
 
     # If the square was previously not closed...
     if old_readout and old_readout[pindex] is not 1:
+        print("Putting to " + str(pindex))
         # ...we send out an OSC message
         client.send_message("/put", pindex)
 
