@@ -30,7 +30,7 @@ port = 6001
 client = SimpleUDPClient(ip, port)
 
 # Environment variables
-thresh = 15
+thresh = 20
 scanned = False
 
 # Runtime variables
