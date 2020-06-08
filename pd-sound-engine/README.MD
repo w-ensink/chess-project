@@ -1,5 +1,5 @@
 # Purr Data
-**(Sound Design + Background music)**
+**(Sound Design + music)**
 
 _Purr Data is integrated with the chessboard. 
 So no external computer is needed._
@@ -41,3 +41,4 @@ because a tower would weight a ton and bass is usually as perceived as heavy and
 ### Music
 The chessboard is perceived as a music grid that Purr Data analysis and produces music from. The chessboard consists of eight vertical lines consisting of eight squares (8 by 8 grid) that contain their own information. The information per line consists of pitch and the placed chess pieces with their own sound. The pitch of the chess pieces is influenced by the square where this piece is placed. The pitch drops from c to c an octave lower (the top square to the bottom square are exactly eight squares). Purr Data descends these eight lines in steps, creating music. This results in a harmony being generated per step with the placed pieces aligned.
 
+Aesthetically, we went for a somewhat floaty and relaxed atmosphere and pace that should not distract the players but should promote concentration. The harmonies created from the sounds are not obvious which will make the players want to participate more in the game to discover new harmonies and sounds.
