@@ -16,17 +16,17 @@ from adafruit_mcp230xx.mcp23017 import MCP23017
 i2c = busio.I2C(board.SCL, board.SDA)
 
 # Connections
-devs = [MCP23017(i2c, 0x20), MCP23017(i2c, 0x21), MCP23017(i2c, 0x22), MCP23017(i2c, 0x23)]
+devs = [MCP23017(i2c, 0x22), MCP23017(i2c, 0x23)]
 pins = []
 
 # Setup for OSC
 ip = "127.0.0.1"
-port = 5000
+port = 6001
 
 client = SimpleUDPClient(ip, port)
 
 # Environment variables
-thresh = 5
+thresh = 15
 scanned = False
 
 # Runtime variables
