@@ -18,6 +18,10 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Connections
 devs = [MCP23017(i2c, 0x22), MCP23017(i2c, 0x23)]
 pins = []
+lookup = [60, 52, 44, 36, 28, 20, 12, 4,
+          61, 53, 45, 37, 29, 21, 13, 5,
+          62, 54, 46, 38, 30, 22, 14, 6,
+          63, 55, 47, 39, 31, 23, 15, 7]
 
 # Setup for OSC
 ip = "127.0.0.1"
@@ -34,7 +38,7 @@ readout = []
 old_readout = []
 
 for dev in devs:
-    for i in range(15):
+    for i in range(16):
         pins.append(dev.get_pin(i))
 
 for pin in pins:
@@ -48,8 +52,9 @@ def open_square(p):
 
     # If the square was previously not open...
     if old_readout and old_readout[pindex] is not 0:
+        print("Pulling from " + str(lookup[pindex]))
         # ...we send out an OSC message
-        client.send_message("/pull", pindex)
+        client.send_message("/pull", lookup[pindex])
 
 
 # Handle a closed square
@@ -59,8 +64,9 @@ def close_square(p):
 
     # If the square was previously not closed...
     if old_readout and old_readout[pindex] is not 1:
+        print("Putting to " + str(lookup[pindex]))
         # ...we send out an OSC message
-        client.send_message("/put", pindex)
+        client.send_message("/put", lookup[pindex])
 
 
 while 1:
