@@ -9,7 +9,9 @@
 #include <shallow_blue_interface.hpp>
 #include <array>
 #include <stack>
-
+#include <cstdio>
+#include <string>
+#include <iostream>
 
 //=============================================================================================
 
@@ -38,6 +40,9 @@
 // returns index of set bit, counted from the right
 [[nodiscard]] inline constexpr  uint32_t indexOfSetBit (uint64_t word) noexcept
 {
+    if (! word)
+        return 64;
+
     auto index = 0u;
     while (! (word & (0x1ull << index))) ++index;
     return 63 - index;

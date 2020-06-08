@@ -6,12 +6,21 @@
 #define CHESS_ENGINE_CHESSENGINETESTER_H
 
 #include <queue>
+#include <cstdint>
+#include <string>
+#include <vector>
+#include <utility>
+#include <iostream>
+
 #include "ChessEngine.h"
 
 
 // a1 == bitBoard 0x1 == index 63
 inline long u64ToBoardIndex (uint64_t bitBoard)
 {
+    if (! bitBoard)
+        return 0;
+
     long index = 0;
     while (! (bitBoard & 0x8000'0000'0000'0000ull))
     {

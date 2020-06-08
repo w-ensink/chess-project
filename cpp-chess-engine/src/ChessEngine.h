@@ -6,6 +6,12 @@
 #define CHESS_ENGINE_CHESSENGINE_H
 
 #include <osc_interface.h>
+#include <cstdint>
+#include <memory>
+#include <thread>
+#include <chrono>
+#include <bitset>
+
 #include "MoveBuilder.h"
 
 
