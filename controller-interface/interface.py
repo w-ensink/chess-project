@@ -92,7 +92,6 @@ while 1:
 
         if pin.reading < thresh:
             # Trigger the open_square function when the sensor gets enough light
-            print("Open square at index: " + str(pins.index(pin)))
             open_square(pin)
         else:
             # Else, trigger the close_square function
