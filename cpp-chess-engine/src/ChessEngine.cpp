@@ -38,14 +38,15 @@ struct ChessEngine::ScoreManager
 };
 
 
-ChessEngine::ChessEngine (uint32_t receivingPort, uint32_t sendingPort)
+ChessEngine::ChessEngine (uint32_t receivingPort, uint32_t sendingPort, const char*startPos)
     : scoreManager {std::make_unique<ScoreManager>()},
       oscSender {sendingPort},
-      oscReceiver {receivingPort}
+      oscReceiver {receivingPort},
+      startPosition {startPos}
 
 {
     moveBuilder.setListener (this);
-    startNewGame();
+    startNewGame (startPos);
     initReceiver();
 }
 
@@ -93,11 +94,12 @@ ChessEngine::~ChessEngine()
 }
 
 
-void ChessEngine::startNewGame()
+void ChessEngine::startNewGame (const std::string& startPos)
 {
     moveBuilder.clearMove();
     eon::initChessEngine();
-    Uci::board.setToStartPos();
+    //Uci::board.setToStartPos();
+    Uci::board.setToFen (startPos);
     oscSender.sendMessage ("/new_game", "i", 1);
 }
 
@@ -196,7 +198,7 @@ void ChessEngine::handleReceivedOSC_Message (std::unique_ptr<OSC_Message> messag
         commitButtonPressed();
 
     else if ("/new_game")
-        startNewGame();
+        startNewGame (startPosition);
 }
 
 

@@ -11,6 +11,7 @@
 #include <thread>
 #include <chrono>
 #include <bitset>
+#include <string>
 
 #include "MoveBuilder.h"
 
@@ -44,20 +45,23 @@
 //  - '/num_pawns_shielding_king'   [num]           (send number of pawns shielding king for colour)
 // ------------------------------------------------------------------------------------------------
 
+const auto startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
 class ChessEngine   : private MoveBuilder::Listener
 {
 public:
 
     // sets up osc connections with given ports
-    explicit ChessEngine (uint32_t receivingPort = 6000, uint32_t sendingPort = 5000);
+    explicit ChessEngine (uint32_t receivingPort = 6000,
+                          uint32_t sendingPort = 5000,
+                          const char* startPos = startFEN);
 
     // closes the Local_OSC_Server (receiver)
     ~ChessEngine();
 
     // start a new chess match, clears board to start pos, clears move builder
     // also notifies via sender on address '/new_game'
-    void startNewGame();
+    void startNewGame (const std::string& startPos);
 
 
 
@@ -103,6 +107,8 @@ private:
     // 5 = queen
     // 6 = king
     [[nodiscard]] static char* boardToString();
+
+    const std::string startPosition;
 };
 
 

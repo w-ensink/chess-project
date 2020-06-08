@@ -41,11 +41,12 @@ int main (int argc, char* argv[])
 {
     //performMoveBuilderTest();
 
+    auto startPosition {"nkqr4/pppp4/8/8/8/8/PPPP4/RKQN4 w Q - 0 1"};
     auto sendingPort = 5001u;
     auto receivingPort = 6001u;
     print ("Chess Engine will send on:", sendingPort, "and receive on:", receivingPort);
-    auto engine = ChessEngine {receivingPort, sendingPort};
-    engine.startNewGame();
+    auto engine = ChessEngine {receivingPort, sendingPort, startPosition};
+    //engine.startNewGame();
     //performChessEngineTests();
     //Local_OSC_Server server {4000};
     //Local_OSC_Client client {4000};
