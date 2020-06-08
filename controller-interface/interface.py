@@ -44,7 +44,7 @@ for pin in pins:
 # Handle an open square
 def open_square(p):
     pindex = pins.index(p)
-    readout[pindex] = 0
+    readout.append(0)
 
     # If the square was previously not open...
     if old_readout[pindex] is not 0:
@@ -55,7 +55,7 @@ def open_square(p):
 # Handle a closed square
 def close_square(p):
     pindex = pins.index(p)
-    readout[pindex] = 1
+    readout.append(1)
 
     # If the square was previously not closed...
     if old_readout[pindex] is not 1:
