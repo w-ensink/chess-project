@@ -176,7 +176,16 @@ void ChessEngine::initReceiver()
 {
     oscReceiver.startListening ([this] (std::unique_ptr<OSC_Message> message)
     {
-        std::cout << "Engine Received: " << message->address << '\n';
+        std::cout << "Engine Received: " << message->address;
+
+        if (message->address == "/put" || message->address == "/pull")
+        {
+            auto squareIndex = message->getTypeAtIndex<long> (0);
+            auto squareName  = getSquareForBit (boardIndexToUInt64 (squareIndex));
+            std::cout << " " << squareName;
+        }
+
+        std::cout << std::endl;
         handleReceivedOSC_Message (std::move (message));
     });
 
