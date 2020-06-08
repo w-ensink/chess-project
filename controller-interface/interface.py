@@ -34,7 +34,7 @@ readout = []
 old_readout = []
 
 for dev in devs:
-    for i in range(15):
+    for i in range(16):
         pins.append(dev.get_pin(i))
 
 for pin in pins:
