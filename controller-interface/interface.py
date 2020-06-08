@@ -16,17 +16,17 @@ from adafruit_mcp230xx.mcp23017 import MCP23017
 i2c = busio.I2C(board.SCL, board.SDA)
 
 # Connections
-devs = [MCP23017(i2c, 0x20), MCP23017(i2c, 0x21), MCP23017(i2c, 0x22), MCP23017(i2c, 0x23)]
+devs = [MCP23017(i2c, 0x22), MCP23017(i2c, 0x23)]
 pins = []
 
 # Setup for OSC
 ip = "127.0.0.1"
-port = 5000
+port = 6001
 
 client = SimpleUDPClient(ip, port)
 
 # Environment variables
-thresh = 5
+thresh = 15
 scanned = False
 
 # Runtime variables
@@ -44,10 +44,10 @@ for pin in pins:
 # Handle an open square
 def open_square(p):
     pindex = pins.index(p)
-    readout[pindex] = 0
+    readout.append(0)
 
     # If the square was previously not open...
-    if old_readout[pindex] is not 0:
+    if old_readout and old_readout[pindex] is not 0:
         # ...we send out an OSC message
         client.send_message("/pull", pindex)
 
@@ -55,10 +55,10 @@ def open_square(p):
 # Handle a closed square
 def close_square(p):
     pindex = pins.index(p)
-    readout[pindex] = 1
+    readout.append(1)
 
     # If the square was previously not closed...
-    if old_readout[pindex] is not 1:
+    if old_readout and old_readout[pindex] is not 1:
         # ...we send out an OSC message
         client.send_message("/put", pindex)
 
@@ -92,7 +92,6 @@ while 1:
 
         if pin.reading < thresh:
             # Trigger the open_square function when the sensor gets enough light
-            print("Open square at index: " + str(pins.index(pin)))
             open_square(pin)
         else:
             # Else, trigger the close_square function
