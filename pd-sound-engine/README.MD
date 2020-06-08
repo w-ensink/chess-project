@@ -1,18 +1,18 @@
-Purr Data (Sound Design + Background music):
-Purr Data is integrated with the chessboard. 
-So no external computer is needed. 
+# Purr Data (Sound Design + Background music):
+_Purr Data is integrated with the chessboard. 
+So no external computer is needed._
 
-What it is able to:
+### What it is able to:
   - Link sound to moves/chess pieces
   - Judge moves by sound
   - Produce music based on the state of the game
 
-It's goal:
+### It's goal:
 The ultimate goal of this concept is to help people train chess in a fun way. 
 Due to sound and music they can easily and quickly sense when they make a good move, or a less good one, 
 without having to look at a screen. 
 
-Moves:
+### Moves:
 To give the player an indication about wether a move is good or bad we would first have to dwell on the idea what sounds
 'good' or 'bad' or even 'neutral'. For this we have done some simple research about what is often as perceived as a pleasant or an unpleasant sound.
 We discovered that, which is probably common knowledge, minor intervals are perceived as 'unpleasant' and major intervals as 'uplifting'
