@@ -62,8 +62,8 @@ def open_square(p):
             moving = False
             print("Pulling from " + str(lookup[pindex]))
             # ...we send out an OSC message
-            client.send_message("/put", lookup[move_store])
             client.send_message("/pull", lookup[pindex])
+            client.send_message("/put", lookup[move_store])
 
 
 # Handle a closed square
@@ -81,8 +81,8 @@ def close_square(p):
             moving = False
             print("Putting to " + str(lookup[pindex]))
             # ...we send out an OSC message
-            client.send_message("/put", lookup[pindex])
             client.send_message("/pull", lookup[move_store])
+            client.send_message("/put", lookup[pindex])
 
 
 while 1:
