@@ -10,7 +10,7 @@ So no external computer is needed._
   - Produce music based on the state of the game
 
 ### It's goal:
-The ultimate goal of this concept is to help people train chess in a fun way. 
+The ultimate goal is to help people practice chess in a fun way. 
 Due to sound and music they can easily and quickly sense when they make a good move, or a less good one, 
 without having to look at a screen. 
 
