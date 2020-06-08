@@ -1,4 +1,5 @@
-# Purr Data (Sound Design + Background music):
+# Purr Data 
+## (Sound Design + Background music)
 _Purr Data is integrated with the chessboard. 
 So no external computer is needed._
 
