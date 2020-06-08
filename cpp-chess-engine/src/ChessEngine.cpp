@@ -206,7 +206,7 @@ void ChessEngine::handleReceivedOSC_Message (std::unique_ptr<OSC_Message> messag
     else if (address == "/commit")
         commitButtonPressed();
 
-    else if ("/new_game")
+    else if (address == "/new_game")
         startNewGame (startPosition);
 }
 
