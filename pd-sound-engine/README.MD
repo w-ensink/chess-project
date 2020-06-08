@@ -17,6 +17,7 @@ without having to look at a screen.
 ### Moves:
 To give the player an indication about wether a move is good or bad we would first have to dwell on the idea what sounds
 'good' or 'bad' or even 'neutral'. For this we have done some simple research about what is often as perceived as a pleasant or an unpleasant sound.
+
 We discovered that, which is probably common knowledge, minor intervals are perceived as 'unpleasant' and major intervals as 'uplifting'
 and 'happy'. So for the neutral move we would use a single rootnote which on itself doesn't say a lot, it's neutral. 
 For good: major, bad: minor.
