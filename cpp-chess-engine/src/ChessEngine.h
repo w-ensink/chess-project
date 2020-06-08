@@ -45,7 +45,7 @@
 //  - '/num_pawns_shielding_king'   [num]           (send number of pawns shielding king for colour)
 // ------------------------------------------------------------------------------------------------
 
-const auto startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+constexpr auto* startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
 class ChessEngine   : private MoveBuilder::Listener
 {
