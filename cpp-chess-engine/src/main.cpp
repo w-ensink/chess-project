@@ -14,7 +14,6 @@
 
 //=============================================================================================
 
-
 auto simulateChessGame (std::initializer_list<std::string> moves)
 {
     eon::initChessEngine();

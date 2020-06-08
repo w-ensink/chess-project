@@ -16,6 +16,7 @@ ChessEngineTester::ChessEngineTester()
     });
 }
 
+
 ChessEngineTester::~ChessEngineTester()
 {
     statusReceiver.stopListening();
