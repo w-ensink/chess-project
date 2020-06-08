@@ -7,7 +7,7 @@
 
 ChessEngineTester::ChessEngineTester()
 {
-    chessEngine.startNewGame();
+    chessEngine.startNewGame (startFEN);
 
     statusReceiver.startListening ([] (std::unique_ptr<OSC_Message> message)
     {
