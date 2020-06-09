@@ -100,6 +100,7 @@ void MoveBuilder::pullPiece (uint64_t pos)
     else
     {
         std::cout << "Error: pulling piece from empty square: " << "\n";
+        return;
     }
 
     update();
