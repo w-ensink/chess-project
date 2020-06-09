@@ -123,6 +123,7 @@ void ChessEngine::commitButtonPressed()
         {
             // generated move was not a valid one, don't change move building state
             // just don't accept it in it's current form and send a osc message to Purr Data
+            std::cout << "Move attempt failed: " << move << '\n';
             oscSender.sendMessage ("/move_failed", "i", 1);
         }
     }
