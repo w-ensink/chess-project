@@ -7,8 +7,8 @@
 #N canvas 401 383 623 385 sounds 0;
 #X obj 1895 1626;
 #X obj 59 498 outlet~, f 52;
-#N canvas 0 64 1024 681 grid 1;
-#X obj 185 358 tgl 27 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#N canvas 328 64 1024 681 grid 1;
+#X obj 185 358 tgl 27 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 1398 1467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -20,11 +20,11 @@
 #X obj 222 742 list;
 #X obj 521 157 route /pos, f 20;
 #X obj 178 793 zl nth;
-#X obj 185 698 t b i;
-#X obj 185 667 + 1;
+#X obj 183 714 t b i;
+#X obj 183 690 + 1;
 #X obj 212 1397 outlet~;
 #X obj 232 518 * 8;
-#X obj 185 580 +, f 2;
+#X obj 183 647 +, f 2;
 #X text 9 11 0 = niks  1 = pion  2 = toren  3 = paard 4 = loper 
 5 = koningin  6 = koning, f 10;
 #X msg 1589 603 2 1 0 0 0 0 1 2 3 1 0 0 0 0 1 3 4 1 0 0 0 0 1 4 5 1
@@ -58,7 +58,7 @@
 #X msg 1606 881 6 2 0 1 4 3 2 1 4 1 0 2 3 1 2 1 3 1 1 3 4 3 0 0 0 0
 1 2 3 2 1 4 1 5 6 4 6 5 5 6 0 0 0 5;
 #X msg 415 658 12 11 9 7 5 4 2 0;
-#X floatatom 185 616 5 0 0 0 - - -, f 5;
+#X floatatom 183 669 5 0 0 0 - - -, f 5;
 #X obj 185 540 counter 0 7;
 #X obj 187 425 counter 0 7;
 #X obj 187 459 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -133,8 +133,8 @@
 #X obj 426 59 import cyclone;
 #X obj 188 492 Uzi 8;
 #X obj 916 333 route /new_game, f 20;
-#X obj 243 458 < 4;
-#X obj 232 492 spigot;
+#X obj 191 576 < 4;
+#X obj 160 601 spigot;
 #X obj 807 959 print;
 #X obj 819 925 prepend dump;
 #X obj 177 894 route 0 1 2 3 4 5 6, f 101;
@@ -183,11 +183,11 @@
 #X connect 33 0 7 1;
 #X connect 34 0 23 0;
 #X connect 35 0 11 0;
-#X connect 36 0 14 0;
 #X connect 36 0 31 0;
+#X connect 36 0 103 0;
+#X connect 36 0 104 0;
 #X connect 37 0 38 0;
-#X connect 37 0 104 0;
-#X connect 37 0 103 0;
+#X connect 37 0 13 0;
 #X connect 38 0 101 0;
 #X connect 39 0 52 0;
 #X connect 40 0 47 0;
@@ -269,7 +269,7 @@
 #X connect 102 0 87 0;
 #X connect 102 0 16 0;
 #X connect 103 0 104 1;
-#X connect 104 0 13 0;
+#X connect 104 0 14 0;
 #X connect 106 0 105 0;
 #X connect 107 1 24 0;
 #X connect 107 1 106 0;
