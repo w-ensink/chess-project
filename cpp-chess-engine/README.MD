@@ -63,6 +63,7 @@ The engine is entirely dependent on OSC messages that tell it what to do.
 | /commit       | 1                 | Signal a push of the commit button |
 | /pull | [square index]    | Signal that a chess piece has been lifted from the board |
 | /put  | [square index]    | Signal that a chess piece has been put on the board |
+| /clear_move| 1 | Signal that the engine doesn't understand and needs to revert |
 
 ---
 
