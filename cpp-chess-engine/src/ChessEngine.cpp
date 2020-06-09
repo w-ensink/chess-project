@@ -116,6 +116,7 @@ void ChessEngine::commitButtonPressed()
             // move successful, game moved on, clear move builder and send stats to Purr Data
             moveBuilder.clearMove();
             oscSender.sendMessage ("/move_result", "i", scoreManager->getScoreInfluence());
+            std::cout << "Move done: " << move << '\n';
             sendOSC_Messages();
         }
         else
