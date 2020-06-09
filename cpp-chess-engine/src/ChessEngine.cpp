@@ -38,7 +38,7 @@ struct ChessEngine::ScoreManager
 };
 
 
-ChessEngine::ChessEngine (uint32_t receivingPort, uint32_t sendingPort, const char*startPos)
+ChessEngine::ChessEngine (uint32_t receivingPort, uint32_t sendingPort, const char* startPos)
     : scoreManager {std::make_unique<ScoreManager>()},
       oscSender {sendingPort},
       oscReceiver {receivingPort},
