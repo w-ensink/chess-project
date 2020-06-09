@@ -55,15 +55,14 @@ def open_square(p):
 
     # If the square was previously not open...
     if old_readout and old_readout[pindex] is not 0:
-        if not moving:
-            moving = True
-            move_store = pindex
-        else:
-            moving = False
-            print("Pulling from " + str(lookup[pindex]))
-            # ...we send out an OSC message
-            client.send_message("/pull", lookup[pindex])
-            client.send_message("/put", lookup[move_store])
+        # if not moving:
+        #     moving = True
+        #     move_store = pindex
+        # else:
+        moving = False
+        print("Pulling from " + str(lookup[pindex]))
+        # ...we send out an OSC message
+        client.send_message("/pull", lookup[pindex])
 
 
 # Handle a closed square
@@ -74,15 +73,14 @@ def close_square(p):
 
     # If the square was previously not closed...
     if old_readout and old_readout[pindex] is not 1:
-        if not moving:
-            moving = True
-            move_store = pindex
-        else:
-            moving = False
-            print("Putting to " + str(lookup[pindex]))
-            # ...we send out an OSC message
-            client.send_message("/pull", lookup[move_store])
-            client.send_message("/put", lookup[pindex])
+        # if not moving:
+        #     moving = True
+        #     move_store = pindex
+        # else:
+        moving = False
+        print("Putting to " + str(lookup[pindex]))
+        # ...we send out an OSC message
+        client.send_message("/put", lookup[pindex])
 
 
 while 1:
