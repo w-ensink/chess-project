@@ -14,7 +14,7 @@ The ultimate goal is to help people practice chess in a fun way.
 Due to sound and music they can easily and quickly sense when they make a good move, or a less good one, 
 without having to look at a screen. 
 
-### Moves:
+### Moves
 To give the player an indication about wether a move is good or bad we would first have to dwell on the idea what sounds
 'good' or 'bad' or even 'neutral'. For this we have done some simple research about what is often as perceived as a pleasant or an unpleasant sound.
 
