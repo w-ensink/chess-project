@@ -3,6 +3,7 @@
 ## Description
 
 This repository contains the code that was written for a school art project for HKU Utrecht.
+Video performance is at https://youtu.be/BpCOnQ1JWTQ
 
 It consists of three main parts:
 * Python Interface into the physical chess board
